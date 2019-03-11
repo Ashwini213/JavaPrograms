@@ -10,5 +10,5 @@ public class PrimeFactors{
 	System.out.println("enter the value of n");
 	int n=FunctionalProgUtil.getInt();
 	FunctionalProgUtil.primeFactors(n);
-	}
+	} 
 }

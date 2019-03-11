@@ -11,7 +11,7 @@ public class ReplaceName {
 	System.out.println("Enter the original name tobe replaced with username");
 	String userName=FunctionalProgUtil.getstring();
 	System.out.println(FunctionalProgUtil.replaceName(sentance,userName));
-	//System.out.println(message);
+
 	
 	}
 

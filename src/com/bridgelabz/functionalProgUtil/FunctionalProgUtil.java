@@ -1,4 +1,5 @@
 package com.bridgelabz.functionalProgUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -40,7 +41,7 @@ public class FunctionalProgUtil {
 			System.out.println(n);
 		}
 		}
-	//flipcoin
+	//flip coin
 	public static void toss(int flips) {
 		
 		while(count<=flips) {
@@ -78,20 +79,22 @@ public class FunctionalProgUtil {
 		}
 		
 	}
-	//Harmonics
+	//Harmonic number
 	public static void harmonic(int a) {
 		for( int i=2;i<=a;i++) {
 		h1 = h1+(float)1/i;
+		}
 		System.out.println(h1);
-	}
+	
 }
-	//poweroftwo
+	
+	//powerOfTwo
 	public static void powertwo(int x) {
 		int i=0;
 		if(x<=31) {
 		while(i<=x)
 		{
-			System.out.println(i+" "+power);
+			System.out.println("2^"+i+"= "+power);
 
 		power=power*2;
 		i=i+1;
@@ -141,14 +144,25 @@ public class FunctionalProgUtil {
 		 else {
 		 System.out.println(+year+ " is a invalid year");
 		 }
-		 scanner.close();
 	 }
 		//QuadraticEuation
 	public static void equationQuadratic(double a,double b,double c) {
-		 double delta=(b*b)-(4*a*c);
-		double root1=(-b+Math.sqrt(delta))/(2*a);
-		double root2=(-b-Math.sqrt(delta))/(2*a);
-		System.out.println("roots are " +root1+ " and " +root2);		
+		double root1,root2;
+		double delta=b*b-4*a*c;
+		 if(delta>0) {
+		 root1=(-b+Math.sqrt(delta))/(2*a);
+		 root2=(-b-Math.sqrt(delta))/(2*a);
+		System.out.format("root1=%.2f and root2=%.2f",root1,root2);		
+	}
+		 else if(delta==0) {
+			 root1=root2=-b/(2*a);
+	System.out.format(" root1=root2=%.2f",root1);		 
+		 }
+		 else {
+			 double v=-b/(2*a);
+			 double u=Math.sqrt(-delta)/(2*a);
+			 System.out.format("root1=%.2f+%.2fi and root2=%.2f-%.2fi",v,u,v,u);
+		 }
 	}
 	//ReplaceProgram
 	public static void funtionReplace() {
@@ -173,22 +187,10 @@ public class FunctionalProgUtil {
 		}
 	}
 	//StringPermutations
-	public static void stringPermutationIterative(String s) {
-			List<String>list=new ArrayList<>();
-			list.add(String.valueOf(s.charAt(0)));
-			for(int i = 1;i<s.length();i++) {
-				for(int j=list.size()-1;j>0;j--) {
-					String str=list.remove(j);
-					for(int k=0;k<=str.length();k++) {
-						list.add(str.substring(0, k)+s.charAt(i)+str.substring(k));
-					}
-				}
-			}
-			System.out.println(list);
-		}
-	public static void stringPermutationRecurcive(String startAlphabet,String endAlphabet) {
+	public static void stringPermutationRecurcive(String startAlphabet, String endAlphabet) {
 		if(endAlphabet.length()==0) {
 			System.out.println(startAlphabet);
+		}
 			for(int i=0;i<endAlphabet.length();i++){
 				
 				String newStart=startAlphabet+endAlphabet.charAt(i);
@@ -196,7 +198,20 @@ public class FunctionalProgUtil {
 				stringPermutationRecurcive(newStart,newEnd);
 			}
 		}
+	public static void stringPermutationIterative(String s) {
+		List<String>list=new ArrayList<>();
+		list.add(String.valueOf(s.charAt(0)));
+		for(int i = 1;i<s.length();i++) {
+			for(int j=list.size()-1;j>0;j--) {
+				String str=list.remove(j);
+				for(int k=0;k<=str.length();k++) {
+					list.add(str.substring(0, k)+s.charAt(i)+str.substring(k));
+					System.out.println(list);
+				}
+			}
+		}
 	}
+
 	//StopWatch
 	public static double functionStopWatch(long present, long startWatch) {
 		Double time=( present-startWatch)/1000.0;
@@ -258,7 +273,6 @@ public class FunctionalProgUtil {
 		System.out.println("Percentage of loss is: " +100.0*loss/trails);
 	
 	}
-	
 	//replace_regex
 	public static String replaceName(String sentance, String userName) {
 final String REGEX_USERNAME="<<username>>";
