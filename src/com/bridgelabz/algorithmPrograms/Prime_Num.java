@@ -1,5 +1,6 @@
 package com.bridgelabz.algorithmPrograms;
 
+
 public class Prime_Num {
 
 	public static void main(String[] args) {
@@ -18,6 +19,6 @@ for(i=1;i<1000;i++) {
 	}
 }
 System.out.println("prime numbers are:"+primeNumbers);
+	
 	}
-
 }

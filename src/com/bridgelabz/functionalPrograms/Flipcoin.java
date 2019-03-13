@@ -10,7 +10,7 @@ public class Flipcoin {
 		int flips=FunctionalProgUtil.getInt();
 
 		 FunctionalProgUtil.toss(flips);
-		
+		 
 	}
 }
 

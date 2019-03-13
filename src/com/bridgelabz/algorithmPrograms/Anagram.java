@@ -11,7 +11,7 @@ public class Anagram {
 	str1=scanner.nextLine();
 	System.out.println("enter the second String");
 	str2=scanner.nextLine();
-	AlgotithmProgUtil.anagram(str1,str2);
+	AlgotithmProgUtil.anagramChar(str1,str2);
 	scanner.close();
 	}
 
