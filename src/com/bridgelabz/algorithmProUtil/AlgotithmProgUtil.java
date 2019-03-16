@@ -67,6 +67,9 @@ if(anagramInt(li.get(i),li.get(a))) {
 	}
 	}
 }
+	
+	
+	
 //
 	private static boolean anagramInt(Integer n1, Integer n2) {
 		int[] n1count=count(n1);
@@ -196,12 +199,7 @@ public static void insertionSort(String a) {
 	
 }
 
-public static int binarySearch(int[] a,int n) {
-	int high=a.length-1,low=0,mid;
-	
-	return 0;
-	
-}
+
 	
 
 public static long watch(long time_Start, long time_End) {
@@ -212,7 +210,7 @@ public static long watch(long time_Start, long time_End) {
 public static double sqrt(double c) {
 	double t=c;
 	double epsilon=1e-15;
-	while(Math.abs(t-c/t)>epsilon*t) {
+	while(Math.abs(t-c/t) >epsilon*t) {
 		t=((c/t+t))/2;
 	}
 	return t;
@@ -238,11 +236,8 @@ public static void temp_Convertion() {
 	break;
 }
 }
-public static void monthlyPayments() {
-	float P=scanner.nextFloat();
-	int Y=scanner.nextInt();
-	float R=scanner.nextFloat();
-    int n=12*Y;
+public static void monthlyPayments(double P,double R,double Y) {
+	    double n=12*Y;
 	double r=(R*12)/100;
 	double payment;
 	payment=P*r/(1-Math.pow(1+r, -n));
@@ -260,7 +255,88 @@ System.out.println("day which falls on " +month+ " month " +day+ " day " +year+ 
 }
 
 }
+//
+public static void mergeSort(String[] names) {
+	if(names.length>=2) {
+		String[] left=new String[names.length/2];
+		String[] right=new String[names.length-names.length/2];
+		for(int i=0;i<left.length;i++) {
+		    left[i]=names[i];	
+		}
+	    for(int i=0;i<right.length;i++) {
+	    	right[i]=names[i+names.length/2];
+	    }
+	    mergeSort(left);
+	    mergeSort(right);
+	    merge(names,left,right);
+	}
 }
+//
+public static void merge(String[] names, String[] left, String[] right) {
+	int a=0;
+	int b=0;
+
+	for(int i=0;i<names.length;i++) {
+		
+		if(b>=right.length || a<left.length && left[a].compareToIgnoreCase(right[b])<0 ) {
+			names[i]=left[a];
+			a++;
+		}
+		else {
+			names[i]=right[b];	
+			b++;
+			}
+		}
+	}
+//
+public static <T extends Comparable<T>> T maximun(T[] a,T key) {
+	int arrayLength=a.length;
+	int first=0;
+	int last=arrayLength-1;
+	int middle=(first+last)/2;
+	
+	while(first<=last) {
+		if(a[middle].compareTo(key)>0) {
+			first=middle+1;
+			}
+			else if (a[middle]==key) {
+				System.out.println("Element found at location"+middle);
+				break;
+			}
+			else
+				last=middle-1;
+		middle=(first+last)/2;
+		}
+	if(first>last) {
+		System.out.println(key+ " is not present in the last");
+		return key;
+
+	}
+	return key;
+}
+//
+static int i,total;
+static int[] notes= {1000,500,100,50,10,5,2,1};
+public static void countOfNotes(int amount) {
+	
+	if(amount/notes[i]!=0) {
+		total+=(amount/notes[i]);
+		System.out.println(notes[i]+ " rs notes "+amount/notes[i]);
+		amount=amount%notes[i];
+	}
+	i++;
+	if(amount==0) {
+		System.out.println("number of notes are " +total);
+		return;
+	}
+	countOfNotes(amount);
+
+	}
+
+}
+
+
+
 
 
 
