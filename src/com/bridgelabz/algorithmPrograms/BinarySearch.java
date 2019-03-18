@@ -1,17 +1,20 @@
 package com.bridgelabz.algorithmPrograms;
 
+import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
+
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		int c,first,last,middle,N,search,array[];
-		N=Integer.parseInt(args[0]);
+		int c,first,last,middle,search,array[];
+		System.out.println("How many numbers tobe entered");
+		int N=Integer.parseInt(args[0]);
 		array=new int[N];
 		System.out.println("Enter " +N+ " numbers");
 		for(c=0;c<N;c++) {
-			array[c]=Integer.parseInt(args[1]);
+			array[c]=AlgotithmProgUtil.getInt();
 		}
 		System.out.println("Enter the values tobe find");
-		search=Integer.parseInt(args[2]);
+		search=AlgotithmProgUtil.getInt();
 		first=0;
 		last=N-1;
 		middle=(first+last)/2;

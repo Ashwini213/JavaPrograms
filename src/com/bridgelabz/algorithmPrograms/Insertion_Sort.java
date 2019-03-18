@@ -18,7 +18,7 @@ System.out.println();
 scanner.close();
 System.out.println("Insertion Sorted output is");
 for(int k1:a) {
-	System.out.println(k1+" ");
+System.out.println(k1+" ");
 
 }
 }
