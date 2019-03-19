@@ -1,7 +1,7 @@
 package com.bridgelabz.algorithmPrograms;
 
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
-public class Monthly_Payment {
+public class MonthlyPayment {
 
 	public static void main(String[] args) {
 double P,R,Y;

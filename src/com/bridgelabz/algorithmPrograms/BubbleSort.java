@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 
 
-public class Bubble_Sort {
+public class BubbleSort {
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);

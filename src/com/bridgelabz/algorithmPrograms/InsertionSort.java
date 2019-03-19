@@ -1,7 +1,7 @@
 package com.bridgelabz.algorithmPrograms;
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 import java.util.Scanner;
-public class Insertion_Sort {
+public class InsertionSort {
 
 	public static void main(String[] args) {
 	Scanner scanner =new Scanner(System.in);
@@ -19,11 +19,9 @@ scanner.close();
 System.out.println("Insertion Sorted output is");
 for(int k1:a) {
 System.out.println(k1+" ");
-
 }
 }
-
-	}
+}
 	
 
 

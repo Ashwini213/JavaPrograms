@@ -3,12 +3,14 @@ package com.bridgelabz.algorithmPrograms;
 import java.io.File;
 import java.io.IOException;
 
+
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 
 public class SearchAWordInFile {
 
-	public static void main(String[] args) throws IOException {
-File file=new File("C:\\Users\\all\\Desktop");
+	public static void main(String[] args) throws Exception {
+File file=new File("C:\\Users\\all\\eclipse-workspace\\functionalPrograms");
+try {
 String array[] = AlgotithmProgUtil.fileread(file);
 for(String string : array) {
 	System.out.println(string);
@@ -22,4 +24,9 @@ if(i<0) {
 else
 		System.out.println(" word found ");
 }
+catch(IOException e) {
+	e.printStackTrace();
+	System.out.println("Exception");
+}
 	}
+}
