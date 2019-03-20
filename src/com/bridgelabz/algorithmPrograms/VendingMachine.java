@@ -9,5 +9,3 @@ public class VendingMachine {
 	AlgotithmProgUtil.countOfNotes(amount);
 }
 }
-	
-	

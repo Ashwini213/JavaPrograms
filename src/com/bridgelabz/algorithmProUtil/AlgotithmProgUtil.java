@@ -1,4 +1,5 @@
 package com.bridgelabz.algorithmProUtil;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -351,13 +352,7 @@ public static int[] toBinary(int d) {
 	}
 	return stringToIntArray(bin) ;
 }
-public static int[] stringToIntArray(String bin) {
- int[] binary =new int[bin.length()];
- for(int i=0;i<binary.length;i++) {
-	 binary[i]=bin.charAt(i) - 48;
- }
-	return binary;
-}
+
 public static int toDecimal(int[] binary) {
 int dec=0,j=0;
 for(int i=binary.length-1;i>=0;i--)
@@ -370,58 +365,67 @@ j++;
 }
 	return dec;
 }
-public static int[] swapNibbles(int[] array)
-{
-	int temp,j=array.length-4;
-	for(int i=0;i<4;i++)
+public static int[] stringToIntArray(String bin) {
+	 int[] binary =new int[bin.length()];
+	 for(int i=0;i<binary.length;i++) {
+		 binary[i]=bin.charAt(i)-48;
+	 }
+		return binary;
+	}
+	
+	public static int[] swapNibbles(int[] array)
 	{
-		temp=array[i];
-		array[i]=array[j];
-		array[j]=temp;
-		j++;
-	}
-	return array;
-	}
-public static boolean powerOf2(int n) 
-{
-int i=0,temp=(int) Math.pow(2, i);
-while(temp<n) 
-{
-	if(temp==n) 
+		int temp,j=array.length-4;
+		for(int i=0;i<4;i++)
+		{
+			temp=array[i];
+			array[i]=array[j];
+			array[j]=temp;
+			j++;
+		}
+		return array;
+		}
+	public static boolean powerOf2(int n) 
 	{
-		return true;
+	int i=0,temp=(int) Math.pow(2, i);
+	while(temp<n) 
+	{
+		if(temp==n) 
+		{
+			return true;
+		}
+		i++;
 	}
-	i++;
-}
-	return false;
-}
-public static void showArray(int[] array) 
-{
-System.out.println("Array is");
-for(int i=0;i<array.length;i++)
-{
-	System.out.print(array[i]);
-}
-System.out.println();
-}
+		return false;
+	}
+	public static void showArray(int[] array) 
+	{
+	for(int i=0;i<array.length;i++)
+	{
+		System.out.print(array[i]);
+	}
+	System.out.println();
+	}
+
 //
-public static String[] fileread(File file) throws IOException {
-String word =" ";
-ArrayList<String>s1=new ArrayList<String>();
-FileReader fr = new FileReader(file);
-int c;
-while((c=fr.read())!=-1);{
-	if(c==32) {
-		s1.add(word);
-		word=" ";
+public static String[] fileread(File f) throws IOException {
+	String word = "";
+	ArrayList<String> s1 = new ArrayList<String>();
+	FileReader fr = new FileReader(f);
+	int c;
+	while ((c=fr.read()) != -1)
+	{
+		if (c == 32) {
+			s1.add(word);
+			word = "";
+		}
+		else {
+			word = word + String.valueOf((char )c);
+		}
 	}
-	else {
-		word = word+String.valueOf((char )c);
+	fr.close();
+	String[] s = new String[s1.size()];
+	s1.toArray(s);
+	return s;
 	}
-}
-fr.close();
-String[] s=new String[s1.size()];
-s1.toArray(s);
-return s;
-}
 }

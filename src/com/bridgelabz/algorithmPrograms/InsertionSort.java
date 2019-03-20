@@ -22,6 +22,3 @@ System.out.println(k1+" ");
 }
 }
 }
-	
-
-
