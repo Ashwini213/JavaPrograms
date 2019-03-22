@@ -11,9 +11,7 @@ while(d!=0) {
 	bin=(d % 2) + bin;
 	d /=2;
 }
-while(bin.length() % 4 != 0) {
-	bin=0+bin;
-}
+
 System.out.println(bin);
 }
 	}

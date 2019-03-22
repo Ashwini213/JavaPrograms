@@ -1,16 +1,13 @@
 package com.bridgelabz.algorithmPrograms;
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
-import java.util.Scanner;
 public class IntegerToBinary {
 	
 public static void main(String[] args) {
 		try {
-Scanner scanner=new Scanner(System.in);
 System.out.println("Enter a number");
-int[] binary=AlgotithmProgUtil.toBinary(scanner.nextInt());
+int[] binary=AlgotithmProgUtil.toBinary(AlgotithmProgUtil.getInt());
 System.out.println("Binary number is");
 AlgotithmProgUtil.showArray(binary);
-scanner.close();
 AlgotithmProgUtil.swapNibbles(binary);
 System.out.println("After Swapping");
 AlgotithmProgUtil.showArray(binary);

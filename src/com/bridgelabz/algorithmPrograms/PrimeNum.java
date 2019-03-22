@@ -1,9 +1,7 @@
 package com.bridgelabz.algorithmPrograms;
-
-
 public class PrimeNum {
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 int i=0;
 int num=0;
 String primeNumbers=" ";

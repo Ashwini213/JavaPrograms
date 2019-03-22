@@ -1,39 +1,19 @@
 package com.bridgelabz.algorithmPrograms;
-
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
-
-public class BinarySearch {
+public class BinarySearch <T> {
 
 	public static void main(String[] args) {
-		int c,first,last,middle,search,array[];
+		
 		System.out.println("How many numbers tobe entered");
 		int N=Integer.parseInt(args[0]);
-		array=new int[N];
+		String[] a=new String[N];
 		System.out.println("Enter " +N+ " numbers");
-		for(c=0;c<N;c++) {
-			array[c]=AlgotithmProgUtil.getInt();
+		for(int c=0;c<N;c++) {
+			a[c]=AlgotithmProgUtil.getstring();
 		}
-		System.out.println("Enter the values tobe find");
-		search=AlgotithmProgUtil.getInt();
-		first=0;
-		last=N-1;
-		middle=(first+last)/2;
-		
-		while(first<=last) {
-			if(array[middle]<(search)) {
-				first=middle+1;
-				}
-				else if (array[middle]==search) {
-					System.out.println("Element found at location" + (middle+1));
-					break;
-				}
-				else 
-					last=middle-1;
-				
-					middle=(first+last)/2;
-			}
-		if(first>last) {
-			System.out.println(search+ " is not present ");
-		}
+		AlgotithmProgUtil.sort(a);
+		System.out.println("Enter the value to be find");
+		String key=AlgotithmProgUtil.getstring();
+		AlgotithmProgUtil.maximun(a, key);
 	}
 	} 
