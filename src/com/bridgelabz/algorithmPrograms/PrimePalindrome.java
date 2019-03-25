@@ -9,6 +9,5 @@ System.out.println("Prime numbers which are Palindrome are");
 AlgotithmProgUtil.primePalindrome();
 System.out.println("Numbers which are both anagrams and palindromes");
 AlgotithmProgUtil.anagramPalindrome();
-
 }
 }

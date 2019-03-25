@@ -14,6 +14,6 @@ public class BinarySearch <T> {
 		AlgotithmProgUtil.sort(a);
 		System.out.println("Enter the value to be find");
 		String key=AlgotithmProgUtil.getstring();
-		AlgotithmProgUtil.maximun(a, key);
+		AlgotithmProgUtil.search(a, key);
 	}
 	} 

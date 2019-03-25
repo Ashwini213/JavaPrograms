@@ -13,7 +13,6 @@ int day=AlgotithmProgUtil.getInt();
 System.out.println("enter number of years");
 int year=AlgotithmProgUtil.getInt();
 
-AlgotithmProgUtil.dayofwek(month,year,day);
+AlgotithmProgUtil.dayofweek(month,year,day);
 }
-
 }

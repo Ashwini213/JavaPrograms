@@ -126,24 +126,24 @@ public class FunctionalProgUtil {
 		System.out.println(" The distance is: " +distance);
 	}
 	//Leap year
-	public static void yearLeap() {
-		 System.out.println("Enter the year tobe checked");
-		 int year=scanner.nextInt();
-		 if(year>999)
+	public static boolean yearLeap(int Year) {
+		 if(Year>999)
 		 {
-		 if (year%4 == 0 || year%400 == 0) {
-			 System.out.println("Year " +year+ " is a leap year");
+		 if (Year%4 == 0 || Year%400 == 0) {
+			 System.out.println("Year " +Year+ " is a leap year");
 	 }
-		 else if (year%100 == 0) {
-			 System.out.println("Year " +year+ " is not a leap year");
+		 else if (Year%100 == 0) {
+			 System.out.println("Year " +Year+ " is not a leap year");
 		 }
 		 else {
-			 System.out.println("Year " +year+ " is not a leap year");
+			 System.out.println("Year " +Year+ " is not a leap year");
 	 }
 		 }
 		 else {
-		 System.out.println(+year+ " is a invalid year");
+		 System.out.println(+Year+ " is a invalid year");
 		 }
+		return false;
+		
 	 }
 		//QuadraticEuation
 	public static void equationQuadratic(double a,double b,double c) {

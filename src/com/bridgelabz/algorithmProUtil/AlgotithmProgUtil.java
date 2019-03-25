@@ -160,15 +160,14 @@ public class AlgotithmProgUtil {
 	}
 	//
 	public static List<Integer> anagramPalindrome() {
-		List<Integer> outputList=new ArrayList<Integer>();
 
 		List<Integer> List3=primeAnagrams();
 		List<Integer> List4=primePalindrome();
-		
-		List3.retainAll(List4);
-		System.out.println(List3);
-		
-		return List3;
+		List<Integer> outputList=new ArrayList<Integer>(List3);
+
+		outputList.retainAll(List4);
+		System.out.println();
+		return outputList;
 		}
 	//bubbleSort
 	/**
@@ -182,7 +181,6 @@ public class AlgotithmProgUtil {
 					int temp = a[i];
 					a[i]=a[j];
 					a[j]=temp;
-					scanner.close();
 				}
 			}
 		}
@@ -346,15 +344,15 @@ public class AlgotithmProgUtil {
 	 * @param year
 	 * @param day
 	 */
-	public static void dayofwek(int month,int year,int day) {
-		int y0=year-(14-month)/12;
-		{
+	public static int dayofweek(int month,int year,int day) {
+			int y0=year-(14-month)/12;
 			int x=y0+y0/4-y0/100+y0/400;
 			int m0=month+12*((14-month)/12)-2;
-			int d0=(day+x+(31*m0)/12)%7;
+			int d0=(day+x+31*m0/12)%7;
 			System.out.println("day which falls on " +month+ " month " +day+ " day " +year+ " year is " +d0);
+			return d0;
 		}
-	}
+	
 	//
 	/**
 	 * @param names
@@ -401,7 +399,7 @@ public class AlgotithmProgUtil {
 	 * @param a
 	 * @param key
 	 */
-	public static <T extends Comparable<T>> void maximun(T[] a,T key) {
+	public static <T extends Comparable<T>> void search(T[] a,T key) {
 		int arrayLength=a.length;
 		int first=0;
 		int last=arrayLength-1;
@@ -421,7 +419,6 @@ public class AlgotithmProgUtil {
 		if(first>last) {
 			System.out.println(key+ " is not present in the last");
 		}
-
 	}
 	//
 	static int i,total;
@@ -542,9 +539,9 @@ public class AlgotithmProgUtil {
 			int c=scanner.nextInt();
 			System.out.println("Enter 1 if number between " +low+ " and " + mid+ " Enter 2 if number between " +(mid+1)+ "and" +high);
 			if(c==1) 
-				high=mid;
+				low=mid;
 			else
-				low=mid+1;
+				high=mid+1;
 		}
 		return low;
 	}
