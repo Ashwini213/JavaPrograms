@@ -6,9 +6,7 @@ public class Replace {
 
 	public static void main(String[] args) {
 
-	FunctionalProgUtil.funtionReplace();
-    
-		
-}
-}
+		FunctionalProgUtil.funtionReplace();
 
+	}
+}

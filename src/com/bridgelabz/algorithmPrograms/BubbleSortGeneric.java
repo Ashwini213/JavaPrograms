@@ -1,21 +1,22 @@
 package com.bridgelabz.algorithmPrograms;
+
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 
-public class BubbleSortGeneric <T>{
+public class BubbleSortGeneric<T> {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
-System.out.println("Number of elements tobe sorted are");
-int x=AlgotithmProgUtil.getInt();
-String[] a=new String[x];
-System.out.println(" Enter " +x+ " elements which are tobe sorted ");
-for( int i=0;i<a.length;i++) {
-  a[i]=AlgotithmProgUtil.getstring();
-}
-long time_start=System.nanoTime();
-AlgotithmProgUtil.sort(a);
-long time_end = System.nanoTime();
-double result=AlgotithmProgUtil.watch(time_start, time_end);
-System.out.println("elapsed time : " +result);
-  }
+		System.out.println("Number of elements tobe sorted are");
+		int totalElements = AlgotithmProgUtil.getInt();
+		String[] array = new String[totalElements];
+		System.out.println(" Enter " + totalElements + " elements which are tobe sorted ");
+		for (int input = 0; input < array.length; input++) {
+			array[input] = AlgotithmProgUtil.getstring();
+		}
+		long time_start = System.nanoTime();
+		AlgotithmProgUtil.sort(array);
+		long time_end = System.nanoTime();
+		double result = AlgotithmProgUtil.timeElapse(time_start, time_end);
+		System.out.println("elapsed time : " + result);
+	}
 }

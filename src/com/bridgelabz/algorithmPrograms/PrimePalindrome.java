@@ -1,13 +1,15 @@
 package com.bridgelabz.algorithmPrograms;
+
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
+
 public class PrimePalindrome {
 
-public static void main(String[] args) {
-System.out.println("Prime numbers which are Anagrams are");
-AlgotithmProgUtil.primeAnagrams();
-System.out.println("Prime numbers which are Palindrome are");
-AlgotithmProgUtil.primePalindrome();
-System.out.println("Numbers which are both anagrams and palindromes");
-AlgotithmProgUtil.anagramPalindrome();
-}
+	public static void main(String[] args) {
+		System.out.println("Prime numbers which are Anagrams are");
+		AlgotithmProgUtil.primeAnagrams();
+		System.out.println("Prime numbers which are Palindrome are");
+		AlgotithmProgUtil.primePalindrome();
+		System.out.println("Numbers which are both anagrams and palindromes");
+		AlgotithmProgUtil.anagramPalindrome();
+	}
 }

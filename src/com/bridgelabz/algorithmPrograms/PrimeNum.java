@@ -1,22 +1,21 @@
 package com.bridgelabz.algorithmPrograms;
+
 public class PrimeNum {
 
-public static void main(String[] args) {
-int i=0;
-int num=0;
-String primeNumbers=" ";
-for(i=1;i<1000;i++) {
-	int counter=0;
-	for(num=i;num>=1;num--) {
-		if(i%num==0) {
-			counter++;
+	public static void main(String[] args) {
+		String primeNumbers = " ";
+		for (int input = 1; input < 1000; input++) {
+			int counter = 0;
+			for (int number = input; number >= 1; number--) {
+				if (input % number == 0) {
+					counter++;
+				}
+			}
+			if (counter == 2) {
+				primeNumbers = primeNumbers + input + " ";
+			}
 		}
-	}
-	if(counter==2) {
-		primeNumbers=primeNumbers + i + " ";	
-	}
-}
-System.out.println("prime numbers are:"+primeNumbers);
-	
+		System.out.println("prime numbers are:" + primeNumbers);
+
 	}
 }
