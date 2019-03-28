@@ -6,14 +6,14 @@ public class DayOfWeek {
 
 	public static void main(String[] args) {
 		System.out.println("enter number of months");
-		int month = AlgotithmProgUtil.getInt();
+		int Month = AlgotithmProgUtil.getInt();
 
 		System.out.println("enter number of days");
 		int day = AlgotithmProgUtil.getInt();
 
 		System.out.println("enter number of years");
-		int year = AlgotithmProgUtil.getInt();
+		int Year = AlgotithmProgUtil.getInt();
 
-		AlgotithmProgUtil.dayofweek(month, year, day);
+		AlgotithmProgUtil.dayofweek(Month, Year, day);
 	}
 }

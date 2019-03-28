@@ -345,12 +345,12 @@ public class AlgotithmProgUtil {
 	 * @param year
 	 * @param day
 	 */
-	public static int dayofweek(int month, int year, int day) {
-		int y0 = year - (14 - month) / 12;
+	public static int dayofweek(int Month, int Year, int day) {
+		int y0 = Year - (14 - Month) / 12;
 		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
-		int m0 = month + 12 * ((14 - month) / 12) - 2;
-		int d0 = (day + x + 31 * m0 / 12) % 7;
-		System.out.println("day which falls on " + month + " month " + day + " day " + year + " year is " + d0);
+		int m0 = Month + 12 * ((14 - Month) / 12) - 2;
+		int d0 = (day + x + (31 * m0) / 12) % 7;
+		System.out.println("day which falls on " + Month + " month " + day + " day " + Year + " year is " + d0);
 		return d0;
 	}
 
@@ -621,4 +621,10 @@ public class AlgotithmProgUtil {
 		}
 		return array;
 	}
+	 public static boolean isLeapYear(int Year) {
+	        if  ((Year % 4 == 0) && (Year % 100 != 0)) return true;
+	        if  (Year % 400 == 0) return true;
+	        return false;
+	    }
+
 }
