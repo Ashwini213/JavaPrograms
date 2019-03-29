@@ -13,7 +13,7 @@ import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
  */
 public class FileRead {
 	public static void main(String[] args) throws Exception {
-		CustomSinglyLinkedList<Object> list = new CustomSinglyLinkedList<>();
+		CustomLinkedList<Object> list = new CustomLinkedList<>();
 		try {
 			File file = new File("C:\\Users\\all\\Desktop\\ash\\file.txt");
 			BufferedReader br = new BufferedReader(new FileReader(file));

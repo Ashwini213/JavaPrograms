@@ -1,6 +1,7 @@
 package com.bridgelabz.dataStructurePrograms;
 
-public class CustomSinglyLinkedList<T> {
+
+public class CustomLinkedList<T> {
 
 	private Node<T> head;
 	private Node<T> tail;
@@ -115,4 +116,7 @@ public class CustomSinglyLinkedList<T> {
 		}
 		return false;
 	}
+
+	
 }
+	
