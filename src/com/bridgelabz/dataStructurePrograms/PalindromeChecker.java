@@ -19,7 +19,7 @@ public class PalindromeChecker {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Node2<Character> utility = new Node2<Character>();
+		Node2<Character> node = new Node2<Character>();
 
 		System.out.println("Enter a String: ");
 		String s = AlgotithmProgUtil.getstring();
@@ -27,12 +27,12 @@ public class PalindromeChecker {
 		// adding each character to the rear of the dequeue
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
-			utility.addRear(c);
+			node.addRear(c);
 		}
 		int flag = 0;
 
-		while (utility.size > 1) {
-			if (utility.removeFront() != utility.removeRear()) {
+		while (node.size > 1) {
+			if (node.removeFront() != node.removeRear()) {
 				flag = 1;
 				break;
 			}
@@ -44,5 +44,4 @@ public class PalindromeChecker {
 			System.out.println("String is not palindrome");
 		}
 	}
-
 }

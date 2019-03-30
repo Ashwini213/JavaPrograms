@@ -601,25 +601,25 @@ public class AlgotithmProgUtil {
 	 * @param b
 	 * @return
 	 */
-	public static <T extends Comparable<T>> T[] insertionsort(T[] array) {
+	public static void  insertionsort(List<String> array) {
 
 		int i, j, k;
-		for (i = 0; i < array.length; i++) {
+		for (i = 0; i < array.size(); i++) {
 			for (j = 0; j <= i; j++) {
-				if (array[j].compareTo(array[i]) > 0) {
-					T temp = array[j];
-					array[j] = array[i];
+				if (array.get(j).compareTo(array.get(i)) > 0) {
+					String temp = array.get(j);
+					array.set(j,array.get(i));
 					for (k = i; k > j + 1; k--)
-						array[k] = array[k - 1];
-					array[k] = temp;
+						array.set(k, array.get(k-1));
+					array.set(k, temp);
 				}
 			}
 		}
 
-		for (int w = 0; w < array.length; w++) {
-			System.out.println(array[w]);
+		for (int w = 0; w < array.size(); w++) {
+			System.out.println(array.get(i));
 		}
-		return array;
+	
 	}
 	 public static boolean isLeapYear(int Year) {
 	        if  ((Year % 4 == 0) && (Year % 100 != 0)) return true;

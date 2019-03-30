@@ -1,5 +1,8 @@
 package com.bridgelabz.algorithmPrograms;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 
 public class InsertionSortGeneric<T> {
@@ -8,10 +11,11 @@ public class InsertionSortGeneric<T> {
 		// TODO Auto-generated method stub
 		System.out.println("Number of elements tobe sorted are");
 		int totalElements = AlgotithmProgUtil.getInt();
-		String[] array = new String[totalElements];
+		//String[] array = new String[totalElements];
+		List<String> array=new ArrayList<String>();
 		System.out.println(" Enter " + totalElements + " elements which are tobe sorted ");
-		for (int input = 0; input < array.length; input++) {
-			array[input] = AlgotithmProgUtil.getstring();
+		for (int input = 0; input < array.size(); input++) {
+			array.add( AlgotithmProgUtil.getstring());
 		}
 		long time_start = System.nanoTime();
 		AlgotithmProgUtil.insertionsort(array);

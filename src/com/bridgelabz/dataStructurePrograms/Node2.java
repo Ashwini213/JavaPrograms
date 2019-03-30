@@ -4,7 +4,6 @@ import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Deque;
 
 public class Node2<E> {
 	public Node2() {
-
 	}
 
 	Deque<E> front;
@@ -12,6 +11,7 @@ public class Node2<E> {
 	int size = 0;
 
 	// add front
+	@SuppressWarnings("null")
 	public void addFront(E c) {
 		if (front == null) // if no element in list
 		{
@@ -32,12 +32,12 @@ public class Node2<E> {
 	public void addRear(E c) {
 		if (front == null) // if no element in list
 		{
-			Deque<E> tNode = new Deque<E>();
+			Deque<E> tNode = new Deque<E>(c);
 			front = tNode;
 			rear = front;
 		} else // if element in list
 		{
-			Deque<E> tNode = new Deque<>();
+			Deque<E> tNode = new Deque<>(c);
 			rear.next = tNode;
 			tNode.pre = rear;
 			rear = tNode;
@@ -80,10 +80,8 @@ public class Node2<E> {
 			return false;
 	}
 
-	// return size of deque
+	// return size of dequeue
 	public int size() {
 		return size;
-
 	}
-
 }
