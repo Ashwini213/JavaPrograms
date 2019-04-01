@@ -11,16 +11,16 @@ import com.bridgelabz.dataStructurePrograms.dataStructureUtil.StackImplementatio
  */
 public class BalancedParenthesis<T> {
 	public static boolean check(String s) {
-		StackImplementation<String> st = new StackImplementation<>();
+		StackImplementation<String> mystack = new StackImplementation<>();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			if (c == '(') {
-				st.push(s.charAt(i));
+				mystack.push(s.charAt(i));
 			} else if (c == ')') {
-				st.pop();
+				mystack.pop();
 			}
 		}
-		return st.isEmpty();
+		return mystack.isEmpty();
 	}
 
 	/**

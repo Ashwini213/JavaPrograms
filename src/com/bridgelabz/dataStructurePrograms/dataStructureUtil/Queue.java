@@ -1,53 +1,68 @@
 package com.bridgelabz.dataStructurePrograms.dataStructureUtil;
 
 public class Queue<T> {
-	private int maxSize;
 
-	  private int[] queArray;
+		public int capacity = 20;
+		private Object queue[] = new Object[capacity];
+		private int front =-1;
+		int rear=0;
+		int size=0;
 
-	  private int front;
+		public void enque(T item) {
+			if (size == capacity) {
+				expand();
+			}
+			queue[rear++] = item;
+			size++;
+		}
 
-	  private int rear;
+		public int deque() {
+			if (size > 0) {
+				if (size < capacity ) {
+					shrink();
+				}
+				queue[++front] = null;
+				size--;
+			}
+			return capacity;
+		}
 
-	  private int nItems;
+		public void expand() {
+			Object[] newar = new Object[capacity * 2];
+			capacity *= 2;
+			for (int i = front + 1; i < rear; i++) {
+				newar[i] = queue[i];
+			}
+			queue = newar;
+		}
 
-	  public Queue(int s) {
-	    maxSize = s;
-	    queArray = new int[maxSize];
-	    front = 0;
-	    rear = -1;
-	    nItems = 0;
-	  }
+		public void shrink() {
+			Object newar[] = new Object[(capacity)];
+			capacity = capacity-1;
+			int j = 0;
+			for (int i = front + 1; i < rear; i++) {
+				newar[j++] = queue[i];
+			}
+			front = -1;
+			rear = size;
+			queue = newar;
+		}
 
-	  public void insert(int j) {
-	    if (rear == maxSize - 1)
-	      rear = -1;
-	    queArray[++rear] = j;
-	    nItems++;
-	  }
+		boolean isEmpty() {
+			return size == 0;
+		}
 
+		int size() {
+			return size;
+		}
 
-	  public int remove() {
-	    int temp = queArray[front++];
-	    if (front == maxSize)
-	      front = 0;
-	    nItems--;
-	    return temp;
-	  }
-
-	  public int peekFront() {
-	    return queArray[front];
-	  }
-
-	  public boolean isEmpty() {
-	    return (nItems == 0);
-	  }
-
-	  public boolean isFull() {
-	    return (nItems == maxSize);
-	  }
-
-	  public int size() {
-	    return nItems;
-	  }
+		@Override
+		public String toString() {
+			String s = "{ ";
+			for (int i = front + 1; i < rear; i++) {
+				s = s + queue[i] + ", ";
+			}
+			s = s + "}";
+			return s;
+		}
 	}

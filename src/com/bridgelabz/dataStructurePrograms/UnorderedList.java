@@ -8,16 +8,16 @@ import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 import com.bridgelabz.dataStructurePrograms.dataStructureUtil.CustomLinkedList;
 
 public class UnorderedList {
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource", "rawtypes" })
 	public static void main(String[] args) throws Exception {
 		CustomLinkedList<String> list = new CustomLinkedList<String>();
 		File file = new File("C:\\Users\\all\\Desktop\\ash\\file.txt");
 		BufferedReader bufferreader = new BufferedReader(new FileReader(file));
 		String[] array = new String[50];
 		String delimitor = " ";
-		String st;
-		while ((st = bufferreader.readLine()) != null) {
-			array = st.split(delimitor);
+		String string;
+		while ((string = bufferreader.readLine()) != null) {
+			array = string.split(delimitor);
 		}
 		for (String k : array) {
 			list.addElement(k);
@@ -26,9 +26,8 @@ public class UnorderedList {
 		list.get();
 		System.out.println("Enter the key value: ");
 		String key = AlgotithmProgUtil.getstring();
+		CustomLinkedList newList = list.searchKey(list, key);
 
-		list.searchKey(list, key);
-
-		list.traverse();
+		newList.traverse();
 	}
 }

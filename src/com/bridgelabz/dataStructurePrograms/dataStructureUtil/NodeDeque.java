@@ -1,14 +1,14 @@
-package com.bridgelabz.dataStructurePrograms;
+package com.bridgelabz.dataStructurePrograms.dataStructureUtil;
 
 import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Deque;
 
-public class Node2<E> {
-	public Node2() {
+public class NodeDeque<E> {
+	public NodeDeque() {
 	}
 
 	Deque<E> front;
 	Deque<E> rear;
-	int size = 0;
+	public int size = 0;
 
 	// add front
 	@SuppressWarnings("null")

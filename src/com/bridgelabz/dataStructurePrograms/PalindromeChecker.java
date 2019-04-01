@@ -3,7 +3,7 @@
  */
 package com.bridgelabz.dataStructurePrograms;
 
-import com.bridgelabz.dataStructurePrograms.Node2;
+import com.bridgelabz.dataStructurePrograms.dataStructureUtil.NodeDeque;
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 
 /**
@@ -19,15 +19,15 @@ public class PalindromeChecker {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Node2<Character> node = new Node2<Character>();
+		NodeDeque<Character> node = new NodeDeque<Character>();
 
 		System.out.println("Enter a String: ");
-		String s = AlgotithmProgUtil.getstring();
+		String input = AlgotithmProgUtil.getstring();
 
 		// adding each character to the rear of the dequeue
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
-			node.addRear(c);
+		for (int i = 0; i < input.length(); i++) {
+			char character =  input.charAt(i);
+			node.addRear(character);
 		}
 		int flag = 0;
 
@@ -44,4 +44,4 @@ public class PalindromeChecker {
 			System.out.println("String is not palindrome");
 		}
 	}
-}
+}                           
