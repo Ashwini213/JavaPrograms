@@ -12,6 +12,7 @@ public class CustomLinkedList<T> {
 	private Node<T> head;
 	private Node<T> tail;
 	private int size = 0;
+	private String key;
 	static String[] str = new String[100];
 	@SuppressWarnings("rawtypes")
 	static CustomLinkedList newList = new CustomLinkedList();
@@ -20,9 +21,10 @@ public class CustomLinkedList<T> {
 		return head == null;
 	}
 
-	public String addElement(T key) {
+	@SuppressWarnings("unchecked")
+	public String addElement(String key) {
 		Node<T> nd = new Node<T>();
-		nd.setValue(key);
+		nd.setValue((T) key);
 		size++;
 
 		/**
@@ -55,6 +57,17 @@ public class CustomLinkedList<T> {
 
 	}
 
+	@Override
+	public String toString() {
+		Node<T> temp = head;
+		String elements = "";
+		while (temp.getNextRef() != null) {
+			elements += " " + temp.getValue() + " ";
+			temp = temp.getNextRef();
+		}
+		return elements + temp.getValue();
+	}
+
 	public void get() {
 
 		Node<T> tmp = head;
@@ -69,12 +82,11 @@ public class CustomLinkedList<T> {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
-	public CustomLinkedList<T> searchKey(CustomLinkedList<String> list, String key) {
+	public CustomLinkedList<T> searchKey(CustomLinkedList<T> list, String key) {
 		Node<T> current = head;
 		boolean status = false;
-		// while (current != null) {
-		for (int i = 0; i < str.length - 1; i++) {
+
+		for (int i = 0; i <= str.length - 1; i++) {
 			if (str[i] != null && str[i].equals(key)) {
 				status = true;
 				str[i] = null;
@@ -86,15 +98,13 @@ public class CustomLinkedList<T> {
 			if (str[i] != null)
 				newList.addElement(str[i]);
 		}
-
 		if (status) {
-			System.out.println(key + " is present in the list ");
+			System.out.println("Element is present in the list ");
 		} else {
 			System.out.println("Element is not present in the list ");
 			newList.addElement(key);
 		}
+
 		return newList;
-
 	}
-
 }

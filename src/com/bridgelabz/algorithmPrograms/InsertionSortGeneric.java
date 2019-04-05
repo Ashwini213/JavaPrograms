@@ -8,17 +8,16 @@ import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 public class InsertionSortGeneric<T> {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		System.out.println("Number of elements tobe sorted are");
 		int totalElements = AlgotithmProgUtil.getInt();
-		//String[] array = new String[totalElements];
-		List<String> array=new ArrayList<String>();
+		List<String> array = new ArrayList<String>();
 		System.out.println(" Enter " + totalElements + " elements which are tobe sorted ");
-		for (int input = 0; input < array.size(); input++) {
-			array.add( AlgotithmProgUtil.getstring());
+		for (int input = 0; input < totalElements; input++) {
+			array.add(AlgotithmProgUtil.getstring());
 		}
 		long time_start = System.nanoTime();
-		AlgotithmProgUtil.insertionsort(array);
+		AlgotithmProgUtil.insertionsort(array, totalElements);
 		long time_end = System.nanoTime();
 		double result = AlgotithmProgUtil.timeElapse(time_start, time_end);
 		System.out.println("elapsed time : " + result);

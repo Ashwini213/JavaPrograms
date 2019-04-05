@@ -26,7 +26,7 @@ public class PalindromeChecker {
 
 		// adding each character to the rear of the dequeue
 		for (int i = 0; i < input.length(); i++) {
-			char character =  input.charAt(i);
+			char character = input.charAt(i);
 			node.addRear(character);
 		}
 		int flag = 0;
@@ -44,4 +44,4 @@ public class PalindromeChecker {
 			System.out.println("String is not palindrome");
 		}
 	}
-}                           
+}

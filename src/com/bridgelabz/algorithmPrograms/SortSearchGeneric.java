@@ -9,52 +9,60 @@ import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
  * @author all
  *
  */
-public class SortSearchGeneric<T> {
+public class SortSearchGeneric {
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	// TODO Auto-generated method stub
+	public static <T> void main(String[] args) {
 		System.out.println("Enter your choice");
 		int choice = AlgotithmProgUtil.getInt();
-		System.out.println("How many numbers tobe entered");
-		int totalElements = AlgotithmProgUtil.getInt();
-		String[] array = new String[totalElements];
-		System.out.println("Enter " + totalElements + " numbers");
-		for (int input = 0; input < totalElements; input++) {
-			array[input] = AlgotithmProgUtil.getstring();
+		System.out.print("Enter the array size:");
+		int n = AlgotithmProgUtil.getInt();
+		System.out.println("Enter array elements: ");
+		String[] arr = new String[n];
+		for (int i = 0; i < n; i++) {
+			arr[i] = AlgotithmProgUtil.getstring();
 		}
+
 		switch (choice) {
 		case 1:
 			System.out.println("Perform binary search");
 			System.out.println("Sorted array:");
-			AlgotithmProgUtil.sort(array);
-			System.out.println("Enter the value to be find");
+			AlgotithmProgUtil.BubbleSort(arr);
+			System.out.println("Enter the key:");
 			String key = AlgotithmProgUtil.getstring();
-			AlgotithmProgUtil.search(array, key);
+			long starttime = System.nanoTime();
+			AlgotithmProgUtil.BinarySearch(arr, key);
+			long stoptime = System.nanoTime();
+			long elapsed_time = AlgotithmProgUtil.timeElapse(starttime, stoptime);
+			System.out.println("The time taken to perform binary search operation is " + elapsed_time + " ns");
 			break;
 		case 2:
 			System.out.println("Perform bubble sort");
 			System.out.println("Sorted array is:");
-			long time_start = System.nanoTime();
-			AlgotithmProgUtil.sort(array);
-			long time_end = System.nanoTime();
-			double result = AlgotithmProgUtil.timeElapse(time_start, time_end);
-			System.out.println("elapsed time : " + result);
+			long startTime = System.nanoTime();
+			AlgotithmProgUtil.BubbleSort(arr);
+			long stopTime = System.nanoTime();
+			long elapsed_time1 = AlgotithmProgUtil.timeElapse(startTime, stopTime);
+			System.out.println("The time taken to perform bubble sorts operation is " + elapsed_time1 + " ns");
 			break;
+
 		case 3:
 			System.out.println("Perform insertion sort");
 			System.out.println("Sorted array:");
-			time_start = System.nanoTime();
-			AlgotithmProgUtil.insertionsort(array);
-			time_end = System.nanoTime();
-			result = AlgotithmProgUtil.timeElapse(time_start, time_end);
-			System.out.println("elapsed time : " + result);
+			long time_Start = System.nanoTime();
+			AlgotithmProgUtil.insertionSort(arr);
+			long time_End = System.nanoTime();
+			long elapsed_time11 = AlgotithmProgUtil.timeElapse(time_Start, time_End);
+			System.out.println("The time taken to perform Insertion sort operation is " + elapsed_time11 + " ns");
 			break;
 
 		default:
 			break;
 		}
+
 	}
+
 }

@@ -174,6 +174,7 @@ public class AlgotithmProgUtil {
 	/**
 	 * @param a
 	 */
+	// BubbleSort
 	public static void bubbleSort(int[] array) {
 
 		for (int i = 0; i < array.length; i++) {
@@ -218,6 +219,47 @@ public class AlgotithmProgUtil {
 			}
 		}
 		return a;
+	}
+	// for binary search a word in file
+	// BUBBLE SORT
+
+	public static <T extends Comparable<T>> void BubbleSort(T[] array) {
+		int i;
+		int n = array.length;
+		for (i = 0; i < n - 1; i++) {
+			for (int j = 0; j < n - i - 1; j++) {
+				if (array[j].compareTo(array[j + 1]) > 0) {
+					T temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+				}
+			}
+		}
+		for (i = 0; i < n; i++) {
+			System.out.println(array[i] + " ");
+		}
+	}
+
+	// for binary search a word in file
+	// BINARY SEARCH
+	public static <T extends Comparable<T>> void BinarySearch(T[] arr, T key) {
+
+		int low = 0, high = arr.length - 1, mid = 0;
+		mid = (low + high) / 2;
+		while (low <= high) {
+			if (key.compareTo(arr[mid]) > 0)
+				low = mid + 1;
+			else if (arr[mid].equals(key)) {
+				System.out.println("key element found at index " + mid);
+				break;
+			} else
+				high = mid - 1;
+
+			mid = (low + high) / 2;
+		}
+		if (low > high) {
+			System.out.println("key element not found");
+		}
 	}
 
 	/**
@@ -272,6 +314,25 @@ public class AlgotithmProgUtil {
 		return time;
 	}
 
+	// INSERTION SORT FOR INTEGERS
+	public static <T extends Comparable<T>> void insertionSort(T[] array) {
+		int i = 0, j = 0, w;
+		for (i = 0; i < array.length; i++) {
+			for (j = 0; j <= i; j++) {
+				if (array[j].compareTo(array[i]) > 0) {
+					T temp = array[j];
+					array[j] = array[i];
+					for (w = i; w > j + 1; w--)
+						array[w] = array[w - 1];
+					array[w] = temp;
+				}
+			}
+		}
+		for (T kl : array)
+			System.out.println(kl + " ");
+		System.out.println(" ");
+	}
+
 	/**
 	 * @param a
 	 * @param s1
@@ -291,6 +352,27 @@ public class AlgotithmProgUtil {
 			}
 		}
 		return -1;
+
+	}
+
+	public static <T extends Comparable<T>> void binarySearch(T[] arr, T key) {
+		int highValue = arr.length - 1, lowValue = 0, midValue;
+		midValue = (lowValue + highValue) / 2;
+		while (lowValue <= highValue) {
+			if (key.compareTo(arr[midValue]) > 0)
+				lowValue = midValue + 1;
+			else if (arr[midValue].equals(key)) {
+				System.out.println("element found at" + midValue);
+				break;
+			} else {
+				highValue = midValue - 1;
+				midValue = (lowValue + highValue) / 2;
+
+			}
+			if (lowValue > highValue) {
+				System.out.println("Not found");
+			}
+		}
 
 	}
 
@@ -387,14 +469,14 @@ public class AlgotithmProgUtil {
 		for (int i = 0; i < names.length; i++) {
 
 			if (b >= rightSideNum.length
-					|| a < leftSideNum.length && leftSideNum[a].compareToIgnoreCase(rightSideNum[b]) < 0)
-			{
+					|| a < leftSideNum.length && leftSideNum[a].compareToIgnoreCase(rightSideNum[b]) < 0) {
 				names[i] = leftSideNum[a];
 				a++;
 			} else {
 				names[i] = rightSideNum[b];
 				b++;
 			}
+
 		}
 	}
 
@@ -486,7 +568,7 @@ public class AlgotithmProgUtil {
 			j++;
 		}
 		return numDecimal;
-		
+
 	}
 
 	/**
@@ -563,11 +645,11 @@ public class AlgotithmProgUtil {
 		FileReader fr = new FileReader(f);
 		int c;
 		while ((c = fr.read()) != -1) {
- 			if (c == 32) {
+			if (c == 32) {
 				s1.add(word);
 				word = "";
 			} else {
- 				word = word + String.valueOf((char) c);
+				word = word + String.valueOf((char) c);
 			}
 		}
 		fr.close();
@@ -580,51 +662,56 @@ public class AlgotithmProgUtil {
 	 * @param a
 	 * @return
 	 */
-	public static <T extends Comparable<T>> T[] sort(T[] a) {
-		for (int i = 0; i < a.length + 1; i++) {
-			for (int j = i + 1; j < a.length; j++) {
-				if (a[i].compareTo(a[j]) > 0) {
-					T temp = a[i];
-					a[i] = a[j];
-					a[j] = temp;
+	public static void sort(List<Integer> array, int totalElements) {
+		for (int i = 0; i < array.size() - 1; i++) {
+			for (int j = 0; j < array.size() - i - 1; j++) {
+				if (array.get(j) > array.get(j + 1)) {
+					int temp = array.get(j);
+					array.set(j, array.get(j + 1));
+					array.set(j + 1, temp);
 				}
 			}
 		}
-		for (int k = 0; k < a.length; k++) {
-			System.out.println(a[k]);
+		for (int k : array) {
+			System.out.println(k + " ");
 		}
-		return a;
 	}
 
 	// InsertionSort
 	/**
+	 * @param totalElements
 	 * @param b
 	 * @return
 	 */
-	public static void  insertionsort(List<String> array) {
+	public static void insertionsort(List<String> array, int totalElements) {
 
 		int i, j, k;
 		for (i = 0; i < array.size(); i++) {
 			for (j = 0; j <= i; j++) {
 				if (array.get(j).compareTo(array.get(i)) > 0) {
 					String temp = array.get(j);
-					array.set(j,array.get(i));
-					for (k = i; k > j + 1; k--)
-						array.set(k, array.get(k-1));
+					array.set(j, array.get(i));
+					for (k = i; k > j + 1; k--) {
+						array.set(k, array.get(k - 1));
+					}
 					array.set(k, temp);
 				}
 			}
 		}
 
-		for (int w = 0; w < array.size(); w++) {
-			System.out.println(array.get(i));
+		for (String w : array) {
+			System.out.println(w + " ");
+			System.out.println(" ");
 		}
-	
+
 	}
-	 public static boolean isLeapYear(int Year) {
-	        if  ((Year % 4 == 0) && (Year % 100 != 0)) return true;
-	        if  (Year % 400 == 0) return true;
-	        return false;
-	    }
+
+	public static boolean isLeapYear(int Year) {
+		if ((Year % 4 == 0) && (Year % 100 != 0))
+			return true;
+		if (Year % 400 == 0)
+			return true;
+		return false;
+	}
 
 }

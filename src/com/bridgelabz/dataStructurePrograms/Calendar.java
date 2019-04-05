@@ -31,7 +31,7 @@ public class Calendar {
 			days[month] = 29;
 
 		System.out.println("   " + months[month] + " " + year);
-		System.out.println(" S  M Tu  W Th  F  S");
+		System.out.println(" Sunday  Monday Tuesday  Wednsday Thursday  Friday  Saturday");
 
 		int d = day(month, 1, year);
 
