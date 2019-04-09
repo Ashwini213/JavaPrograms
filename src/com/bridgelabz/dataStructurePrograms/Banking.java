@@ -4,6 +4,7 @@
 package com.bridgelabz.dataStructurePrograms;
 
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
+import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Methods;
 import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Queue;;
 
 /**
@@ -34,7 +35,7 @@ public class Banking {
 				System.out.println("How much do you want to deposit? ");
 				amount = AlgotithmProgUtil.getDouble();
 				System.out.println(amount);
-				curBalance = Deposit(amount, curBalance);
+				curBalance =Methods.Deposit(amount, curBalance);
 				System.out.println("Your Deposit is: " + amount);
 				System.out.println("Your Balance is: " + curBalance);
 				break;
@@ -46,13 +47,13 @@ public class Banking {
 					System.out.println("You cannot overdraw your account.Try again.");
 					break;
 				} else {
-					curBalance = Withdrawal(amount, curBalance);
+					curBalance = Methods.Withdrawal(amount, curBalance);
 					System.out.println("Your Withdrawal is: " + amount);
 					System.out.println("Your Balance is: " + curBalance);
 					break;
 				}
 			case 3:
-				checkBalance(curBalance);
+				Methods.checkBalance(curBalance);
 				break;
 			case 4:
 				notDone = false;
@@ -67,18 +68,6 @@ public class Banking {
 		System.out.println("Thank you and have a nice day!");
 	}
 
-	public static int Deposit(double amount, int curBalance) {
-		curBalance += amount;
-		return curBalance;
-	}
-
-	public static int Withdrawal(double amount, int curBalance) {
-		curBalance -= amount;
-		return curBalance;
-	}
-
-	public static void checkBalance(int curBalance) {
-		System.out.println("Your current balance is: " + curBalance);
-	}
+	
 
 }

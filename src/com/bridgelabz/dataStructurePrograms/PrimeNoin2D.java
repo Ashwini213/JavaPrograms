@@ -3,8 +3,6 @@
  */
 package com.bridgelabz.dataStructurePrograms;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class PrimeNoin2D {
 	}
 
 	public static ArrayList<Integer> primeNumbers(int m, int n) {
-		ArrayList<Integer> lst = new ArrayList<Integer>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		int temp;
 
 		// swapping of bounds if the given lower bound is greater than upper bound
@@ -57,9 +55,8 @@ public class PrimeNoin2D {
 			// If the number is prime which is indicated by the flag,
 			// then adds the number into an ArrayList.
 			if (flag == 1)
-				lst.add(i);
+				list.add(i);
 		}
-		return lst;
+		return list;
 	}
-
 }

@@ -1,5 +1,12 @@
+/**
+ * 
+ */
 package com.bridgelabz.dataStructurePrograms.dataStructureUtil;
 
+/**
+ * @author all
+ *
+ */
 public class QueueLinkedList<T> {
 	public Node<T> front, rear;
 	public int size = 0;
@@ -82,4 +89,5 @@ public class QueueLinkedList<T> {
 			}
 		}
 	}
+
 }
