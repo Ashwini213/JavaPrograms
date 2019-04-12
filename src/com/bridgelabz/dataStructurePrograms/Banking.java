@@ -14,13 +14,13 @@ import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Queue;;
 public class Banking {
 	@SuppressWarnings("unused")
 	public static void main(String args[]) {
-		int curBalance = 10000;
+		int currentBalance = 10000;
 		double amount = 0;
 		boolean notDone = true;
-		Queue<Integer> d = new Queue<Integer>();
+		Queue<Integer> myqueue = new Queue<Integer>();
 
-		while (d.capacity > 0) {
-			d.enque(d.capacity);
+		while (myqueue.capacity > 0) {
+			myqueue.enque(myqueue.capacity);
 			System.out.println();
 			System.out.println("------------Banking Cash Counter-----------");
 			System.out.println("1.Deposit");
@@ -35,29 +35,29 @@ public class Banking {
 				System.out.println("How much do you want to deposit? ");
 				amount = AlgotithmProgUtil.getDouble();
 				System.out.println(amount);
-				curBalance =Methods.Deposit(amount, curBalance);
+				currentBalance = Methods.Deposit(amount, currentBalance);
 				System.out.println("Your Deposit is: " + amount);
-				System.out.println("Your Balance is: " + curBalance);
+				System.out.println("Your Balance is: " + currentBalance);
 				break;
 			case 2:
 				System.out.println("How much do you want to withdraw? ");
 				amount = AlgotithmProgUtil.getDouble();
 				System.out.println(amount);
-				if (amount > curBalance) {
+				if (amount > currentBalance) {
 					System.out.println("You cannot overdraw your account.Try again.");
 					break;
 				} else {
-					curBalance = Methods.Withdrawal(amount, curBalance);
+					currentBalance = Methods.Withdrawal(amount, currentBalance);
 					System.out.println("Your Withdrawal is: " + amount);
-					System.out.println("Your Balance is: " + curBalance);
+					System.out.println("Your Balance is: " + currentBalance);
 					break;
 				}
 			case 3:
-				Methods.checkBalance(curBalance);
+				Methods.checkBalance(currentBalance);
 				break;
 			case 4:
 				notDone = false;
-				int c = d.deque();
+				int c = myqueue.deque();
 				System.out.println("The Number of People in Queue is: " + c);
 				break;
 			default:
@@ -67,7 +67,4 @@ public class Banking {
 		}
 		System.out.println("Thank you and have a nice day!");
 	}
-
-	
-
 }

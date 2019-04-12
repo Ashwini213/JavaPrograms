@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 import com.bridgelabz.dataStructurePrograms.dataStructureUtil.CustomLinkedList;
+import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Methods;
 
 /**
  * @author all
@@ -29,15 +30,13 @@ public class TestOrderedList {
 		while ((st = bufferreader.readLine()) != null) {
 			array = st.split(" ");
 		}
-		bubbleSort(array);
+		Methods.bubbleSort(array);
 		for (String k : array) {
 			list.addElement(k);
-
 		}
 
-		// list.traverse();
 		list.get();
-
+		list.traverse();
 		System.out.println("Enter the key value: ");
 		String key = AlgotithmProgUtil.getstring();
 
@@ -50,27 +49,9 @@ public class TestOrderedList {
 		String data = newList.toString();
 
 		fw.write(data);
-		// fw.write("Test ");
 		fw.close();
 
 		System.out.println("ordered List -" + data);
-	}
 
-	static String[] bubbleSort(String[] array) {
-		for (int j = 0; j < array.length; j++) {
-			for (int i = j + 1; i < array.length; i++) {
-				// comparing strings
-				if (array[i].compareTo(array[j]) < 0) {
-
-					String temp = array[j];
-					array[j] = array[i];
-					array[i] = temp;
-				}
-			}
-		}
-		for (int k = 0; k < array.length; k++) {
-			System.out.println(array[k]);
-		}
-		return array;
 	}
 }

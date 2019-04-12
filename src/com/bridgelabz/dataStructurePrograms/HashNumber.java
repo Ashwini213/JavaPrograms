@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.bridgelabz.dataStructurePrograms.dataStructureUtil.SinglyLinkedList;
+import com.bridgelabz.dataStructurePrograms.dataStructureUtil.CustomLinkedList;
 
 /**
  * @author all
@@ -17,12 +17,12 @@ import com.bridgelabz.dataStructurePrograms.dataStructureUtil.SinglyLinkedList;
  */
 public class HashNumber {
 	public static void main(String[] args) throws IOException {
-		SinglyLinkedList<Integer> ds = new SinglyLinkedList<>();
-		SinglyLinkedList<Integer> ds1 = null;
+		CustomLinkedList<Integer> ds = new CustomLinkedList<>();
+		CustomLinkedList<Integer> ds1 = null;
 
-		Map<Integer, SinglyLinkedList<Integer>> map = new HashMap<Integer, SinglyLinkedList<Integer>>();
+		Map<Integer, CustomLinkedList<Integer>> map = new HashMap<Integer, CustomLinkedList<Integer>>();
 		for (int i = 0; i <= 10; i++) {
-			ds1 = new com.bridgelabz.dataStructurePrograms.dataStructureUtil.SinglyLinkedList<>();
+			ds1 = new com.bridgelabz.dataStructurePrograms.dataStructureUtil.CustomLinkedList<>();
 			map.put(i, ds1);
 		}
 		FileReader fr = new FileReader("C:\\Users\\all\\Desktop\\ash\\new.txt");
@@ -71,7 +71,7 @@ public class HashNumber {
 		}
 
 		for (int i = 0; i < map.size(); i++) {
-			SinglyLinkedList<Integer> list = map.get(i);
+			CustomLinkedList<Integer> list = map.get(i);
 			System.out.print(i + "--> ");
 			list.printList();
 			System.out.println();

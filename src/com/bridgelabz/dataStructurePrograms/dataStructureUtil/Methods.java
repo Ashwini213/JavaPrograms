@@ -10,12 +10,21 @@ import java.util.*;
  *
  */
 public class Methods {
+	/**
+	 * @param n
+	 * @return
+	 */
 	public static double binaryCount(double n) {
 		double c = binomialCoeff(2 * n, n);
 		double count = c / (n + 1);
 		return count;
 	}
 
+	/**
+	 * @param n
+	 * @param k
+	 * @return
+	 */
 	public static double binomialCoeff(double n, double k) {
 		int res = 1;
 		if (k > n - k)
@@ -28,11 +37,8 @@ public class Methods {
 	}
 
 	/**
-	 * to find prime number which are anagram
-	 * 
 	 * @param primeList
-	 *            is list of integers
-	 * @return set of integers
+	 * @return
 	 */
 	public static Set<Integer> primeAnagram(List<Integer> primeList) {
 		Set<Integer> primeAnagram = new HashSet<>();
@@ -151,7 +157,7 @@ public class Methods {
 		}
 	}
 
-	public static List<Integer> primeNum2D(int m, int n) {
+	public static List<Integer> primeNum(int m, int n) {
 		List<Integer> lst = new ArrayList<Integer>();
 		int temp;
 
@@ -235,6 +241,91 @@ public class Methods {
 				}
 			}
 			System.out.println();
+		}
+	}
+
+	public static ArrayList<Integer> primeNumbers(int m, int n) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int temp;
+
+		// swapping of bounds if the given lower bound is greater than upper bound
+		if (m > n) {
+			temp = m;
+			m = n;
+			n = temp;
+		}
+		int flag = 1;
+		// try all the possible values from lower bound to upper bound
+		// if the number has the factor then it must be checked within lower bound
+		for (int i = m; i <= n; i++) {
+			for (int j = 2; j < i; j++) {
+				// If the number is divisible by any of the number then
+				// initializing flag to zero and break
+				// else flag is initialized to one
+				if (i % j == 0) {
+					flag = 0;
+					break;
+				} else
+					flag = 1;
+			}
+			// If the number is prime which is indicated by the flag,
+			// then adds the number into an ArrayList.
+			if (flag == 1)
+				list.add(i);
+		}
+		return list;
+	}
+
+	public static String[] bubbleSort(String[] array) {
+		for (int j = 0; j < array.length; j++) {
+			for (int i = j + 1; i < array.length; i++) {
+				// comparing strings
+				if (array[i].compareTo(array[j]) < 0) {
+
+					String temp = array[j];
+					array[j] = array[i];
+					array[i] = temp;
+				}
+			}
+		}
+		return array;
+	}
+
+	static boolean isMatchingPair(char character1, char character2) {
+		if (character1 == '(' && character2 == ')')
+			return true;
+		else if (character1 == '{' && character2 == '}')
+			return true;
+		else if (character1 == '[' && character2 == ']')
+			return true;
+		else
+			return false;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static boolean areParenthesisBalanced(char[] character) {
+
+		StackLinkedList stack = new StackLinkedList();
+
+		for (int i = 0; i < character.length; i++) {
+			if (character[i] == '{' || character[i] == '(' || character[i] == '[')
+				stack.push(character[i]);
+
+			if (character[i] == '}' || character[i] == ')' || character[i] == ']') {
+
+				if (stack.isEmpty()) {
+					return false;
+				}
+				else if (!isMatchingPair((char) stack.pop(), character[i])) {
+					return false;
+				}
+			}
+		}
+
+		if (stack.isEmpty())
+			return true;
+		else {
+			return false;
 		}
 	}
 }

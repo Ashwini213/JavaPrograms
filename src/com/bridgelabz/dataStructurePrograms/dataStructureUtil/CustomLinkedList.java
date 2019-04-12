@@ -12,13 +12,27 @@ public class CustomLinkedList<T> {
 	private Node<T> head;
 	private Node<T> tail;
 	private int size = 0;
-	private String key;
 	static String[] str = new String[100];
 	@SuppressWarnings("rawtypes")
 	static CustomLinkedList newList = new CustomLinkedList();
 
 	public boolean isEmpty() {
 		return head == null;
+	}
+
+	public void add(T data) {
+		Node<T> nd = new Node<T>();
+
+		nd.setValue(data);
+
+		System.out.println("Adding: " + data);
+		if (isEmpty()) {
+			head = nd;
+			tail = nd;
+		} else {
+			tail.setNextRef(nd);
+			tail = nd;
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -82,6 +96,7 @@ public class CustomLinkedList<T> {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public CustomLinkedList<T> searchKey(CustomLinkedList<T> list, String key) {
 		Node<T> current = head;
 		boolean status = false;
@@ -104,7 +119,71 @@ public class CustomLinkedList<T> {
 			System.out.println("Element is not present in the list ");
 			newList.addElement(key);
 		}
-
 		return newList;
 	}
+
+	public int size() {
+		Node<T> tnode = head;
+		int len = 0;
+		while (tnode != null) {
+			len++;
+			tnode = tnode.getNextRef();
+		}
+		return len;
+	}
+
+	public int[] convertIntArray(String[] arr) {
+		int[] arrInt = new int[arr.length];
+		for (int i = 0; i < arr.length; i++) {
+			arrInt[i] = Integer.valueOf(arr[i]);
+		}
+		return arrInt;
+	}
+
+	public int[] sort(int[] array) {
+		int temp;
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array.length - 1; j++) {
+				if (array[j] > array[j + 1]) {
+					temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+				}
+			}
+		}
+		return array;
+	}
+
+	public void printList() {
+		Node<T> tnode = head;
+		while (tnode != null) {
+			System.out.print(tnode.getValue() + " ");
+			tnode = tnode.getNextRef();
+		}
+	}
+
+	public String[] convArray(String[] array) {
+		Node<T> tnode = head;
+		int i = 0;
+		while (tnode != null) {
+			array[i] = String.valueOf(tnode.getValue());
+			tnode = tnode.getNextRef();
+			i++;
+		}
+		return array;
+	}
+
+	public boolean search(T data) {
+		Node<T> temp = head;
+
+		while (temp.getNextRef() != null) {
+
+			if (data.equals(temp.getValue())) {
+				return true;
+			}
+			temp = temp.getNextRef();
+		}
+		return false;
+	}
+
 }

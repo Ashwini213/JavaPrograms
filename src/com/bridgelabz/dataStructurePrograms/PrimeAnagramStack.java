@@ -19,7 +19,7 @@ public class PrimeAnagramStack {
 
 		List<Integer> list1 = new ArrayList<Integer>();
 
-		list1 = Methods.primeNum2D(0, 1000);
+		list1 = Methods.primeNum(0, 1000);
 
 		for (int i = 0; i < list1.size(); i++) {
 			for (int j = i + 1; j < list1.size(); j++) {
@@ -36,5 +36,4 @@ public class PrimeAnagramStack {
 			System.out.println(st.pop() + " " + st.pop());
 		}
 	}
-
 }

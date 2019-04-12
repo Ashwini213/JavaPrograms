@@ -5,19 +5,10 @@ package com.bridgelabz.dataStructurePrograms.dataStructureUtil;
 
 public class StackLinkedList<T> {
 
-	/*
-	 * top is of the type Node and is declared private to achieve encapsulation
-	 */
 	private Node<T> top;
 
-	/*
-	 * size is of the type integer and is declared private to achieve encapsulation
-	 */
 	private int size;
 
-	/**
-	 * Constructor to initialize the instance variables of class StackLinkedList
-	 */
 	public StackLinkedList() {
 		top = null;
 		size = 0;

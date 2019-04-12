@@ -17,7 +17,7 @@ public class PrimeAnagram {
 		List<List<Integer>> a1 = new ArrayList<List<Integer>>();
 		int start = 0;
 		int end = 1000;
-		List<Integer> lst = Methods.primeNum2D(start, end);
+		List<Integer> lst = Methods.primeNum(start, end);
 		List<Integer> list = Methods.anagramPrime(lst);
 		List<Integer> lst1 = new ArrayList<>();
 		lst1.addAll(list);

@@ -30,7 +30,6 @@ public class UnorderedList {
 
 		CustomLinkedList<String> newList = list.searchKey(list, key);
 
-		newList.traverse();
 		FileWriter fw = new FileWriter("C:\\Users\\all\\Desktop\\ash\\file.txt");
 		String data = newList.toString();
 		fw.write(data);

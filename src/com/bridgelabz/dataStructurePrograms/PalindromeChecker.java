@@ -3,7 +3,7 @@
  */
 package com.bridgelabz.dataStructurePrograms;
 
-import com.bridgelabz.dataStructurePrograms.dataStructureUtil.NodeDeque;
+import com.bridgelabz.dataStructurePrograms.dataStructureUtil.Node;
 import com.bridgelabz.algorithmProUtil.AlgotithmProgUtil;
 
 /**
@@ -19,7 +19,7 @@ public class PalindromeChecker {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		NodeDeque<Character> node = new NodeDeque<Character>();
+		Node<Character> node = new Node<Character>();
 
 		System.out.println("Enter a String: ");
 		String input = AlgotithmProgUtil.getstring();

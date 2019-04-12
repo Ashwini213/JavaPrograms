@@ -65,15 +65,5 @@ public class Queue<T> {
 		s = s + "}";
 		return s;
 	}
-	public void display(){
-		if(isQueueEmpty()){
-		System.out.println("Queue is empty");
-		return;
-		}
-		else{
-		Node<T> tNode=front;
-		while(tNode!=null){
-		System.out.print(tNode.getValue()+" ");
-		tNode=tNode.getNextRef();
-		}}}
+
 }
