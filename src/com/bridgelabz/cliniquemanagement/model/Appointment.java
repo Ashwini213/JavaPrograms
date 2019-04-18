@@ -8,4 +8,5 @@ package com.bridgelabz.cliniquemanagement.model;
  *
  */
 public class Appointment {
+	
 }

@@ -54,7 +54,7 @@ public class InventoryImpl implements InventoryInterface {
 				double weight = ((Double) jobject.get("weight")).doubleValue();
 				inventory.setWeight(weight); // setWeight(weight);
 				inventory.setName(name);
-				
+
 				inventory.setPrice(price);
 				inventories.add(inventory);
 
@@ -63,8 +63,6 @@ public class InventoryImpl implements InventoryInterface {
 			}
 		}
 	}
-
-	
 
 	public void calculateInventory() {
 		inventories.forEach(inventory -> System.out.println(
@@ -102,7 +100,7 @@ public class InventoryImpl implements InventoryInterface {
 	@Override
 	public void remove(String name) {
 		Inventory inventory = new Inventory();
-//	fileRead();
+		// fileRead();
 
 		System.out.println("enter the name you wan to delete");
 		Scanner sc = new Scanner(System.in);
@@ -112,6 +110,6 @@ public class InventoryImpl implements InventoryInterface {
 		System.out.println(inventories);
 		System.out.println("removed successfully");
 		writeFile();
-sc.close();
+		sc.close();
 	}
 }

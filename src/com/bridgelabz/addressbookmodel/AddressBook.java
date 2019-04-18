@@ -8,75 +8,75 @@ package com.bridgelabz.addressbookmodel;
  *
  */
 public class AddressBook {
-	private String Firstname;
-	private String Lastname;
-	private String City;
-	private long Mobilenumber;
-	private Long Zipcode;
-	private String State;
-	private String Address;
-
-
-	public String getAddress() {
-		return Address;
-	}
-
-	public void setAddress(String address) {
-		Address = address;
-	}
-
-	public String getState() {
-		return State;
-	}
-
-	public void setState(String state) {
-		State = state;
-	}
-
-	public Long getZipcode() {
-		return Zipcode;
-	}
-
-	public void setZipcode(Long zipcode) {
-		Zipcode = zipcode;
-	}
-
-	public String getCity() {
-		return City;
-	}
-
-	public void setCity(String city) {
-		City = city;
-	}
-
-	public long getMobilenumber() {
-		return Mobilenumber;
-	}
-
-	public void setMobilenumber(long mobilenumber) {
-		Mobilenumber = mobilenumber;
-	}
+	private String firstname;
+	private String lastname;
+	private String city;
+	private long phonenumber;
+	private Long zipcode;
+	private String state;
+	private String address;
 
 	public String getFirstname() {
-		return Firstname;
+		return firstname;
 	}
 
 	public void setFirstname(String firstname) {
-		Firstname = firstname;
+		this.firstname = firstname;
 	}
 
 	public String getLastname() {
-		return Lastname;
+		return lastname;
 	}
 
 	public void setLastname(String lastname) {
-		Lastname = lastname;
+		this.lastname = lastname;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	
+	public Long getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(Long zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	
+
+	public long getPhonenumber() {
+		return phonenumber;
+	}
+
+	public void setPhonenumber(long phonenumber) {
+		this.phonenumber = phonenumber;
+	}
 	@Override
 	public String toString() {
-		return "AddressBook [Address=" + Address + ", State=" + State + ", Zipcode=" + Zipcode + ", City=" + City
-				+ ", Mobilenumber=" + Mobilenumber + ", Firstname=" + Firstname + ", Lastname=" + Lastname + "]";
+		return "[firstname=" + firstname + ", lastname=" + lastname + ", city=" + city + ", mobilenumber="
+				+phonenumber + ", zipcode=" + zipcode + ", state=" + state + ", address=" + address + "]";
 	}
-
 }

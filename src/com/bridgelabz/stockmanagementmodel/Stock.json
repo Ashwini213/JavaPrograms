@@ -1,1 +1,27 @@
-[{"name":"pen","share":2,"price":22.0},{"name":"pencil","share":3,"price":14.0},{"name":"eraser","share":4,"price":54.0},{"name":"book","share":4,"price":33.0}]
+[
+	{
+		"name": "pen",
+		"share": 2,
+		"price": 22.0
+	},
+	{
+		"name": "pencil",
+		"share": 3,
+		"price": 14.0
+	},
+	{
+		"name": "eraser",
+		"share": 4,
+		"price": 54.0
+	},
+	{
+		"name": "book",
+		"share": 4,
+		"price": 33.0
+	},
+	{
+		"name": "notebook",
+		"share": 6,
+		"price": 25.0
+	}
+]

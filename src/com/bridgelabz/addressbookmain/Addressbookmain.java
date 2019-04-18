@@ -17,15 +17,15 @@ public class Addressbookmain {
 
 	/**
 	 * @param args
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
+
+		// Addressimpl address = new Addressimpl();
 		Addressinterface addressimpl = new Addressimpl();
 		addressimpl.readfile();
 		System.out.println("enter your choice");
 		int choice = OopsUtility.getInt();
-
-		
 
 		switch (choice) {
 
@@ -46,14 +46,14 @@ public class Addressbookmain {
 
 			System.out.println("enter your phonenumber");
 			Long Phonenumber = OopsUtility.getLong();
-			
+
 			System.out.println("enter the address");
-			 String Address=OopsUtility.getstring();
-			
-			addressimpl.addPerson(Firstname, Lastname, City, State, Zipcode, Phonenumber,Address);
-			
-			Addressimpl.writeFile();
+			String Address = OopsUtility.getstring();
+			addressimpl.addPerson(Firstname, Lastname, City, State, Zipcode, Phonenumber, Address);
+			addressimpl.writeFile();
+			System.out.println("information added successfully ");
 			break;
+
 		case 2:
 			addressimpl.deletePerson();
 			break;
@@ -66,6 +66,7 @@ public class Addressbookmain {
 		default:
 			System.out.println("enter valid input");
 		}
+		
 
 	}
 

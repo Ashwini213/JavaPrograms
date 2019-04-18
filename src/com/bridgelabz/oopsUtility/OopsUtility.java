@@ -17,7 +17,7 @@ public class OopsUtility {
 	public static int getInt() {
 		return scanner.nextInt();
 	}
-	public static long getLong() {
+	public static Long getLong() {
 		return scanner.nextLong();
 	}
 	

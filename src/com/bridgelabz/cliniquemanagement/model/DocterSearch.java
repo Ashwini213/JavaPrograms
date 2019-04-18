@@ -14,10 +14,12 @@ import com.bridgelabz.oopsUtility.OopsUtility;
  */
 
 public class DocterSearch {
-	static List<Docter> doctorlist = new ArrayList<Docter>();
-	static Docter doctor = null;
 
+	@SuppressWarnings("unused")
 	public static void addDoctor() {
+		Docter doctor = new Docter();
+		List<Docter> doctorlist = new ArrayList<Docter>();
+
 		doctor = new Docter();
 		System.out.println("Enter the Doctor Name");
 		String dname = OopsUtility.getstring();
