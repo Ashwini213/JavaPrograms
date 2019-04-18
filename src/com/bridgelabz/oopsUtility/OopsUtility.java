@@ -17,6 +17,10 @@ public class OopsUtility {
 	public static int getInt() {
 		return scanner.nextInt();
 	}
+	public static long getLong() {
+		return scanner.nextLong();
+	}
+	
 
 	public static String getstring() {
 		return scanner.next();
@@ -48,4 +52,18 @@ public class OopsUtility {
 		line = m4.replaceAll(date);
 		return line;
 	}
+	//deckofcards
+	public static <T extends Comparable<T>> T[] sortArray(T str[]) {
+        int length = str.length;
+        for (int i = 1; i < length; i++) {
+            T key = str[i];
+            int j = i - 1;
+            while (j >= 0 && ((str[j].compareTo(key) > 0))) {
+                str[j + 1] = str[j];
+                j--;
+            }
+            str[j + 1] = key;
+        }
+        return str;
+    }
 }

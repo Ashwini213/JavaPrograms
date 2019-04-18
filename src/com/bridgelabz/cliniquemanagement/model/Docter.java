@@ -49,8 +49,8 @@ public class Docter {
 
 	public String toString() {
 
-		return "Docter[id is " + id + " name is " + name + " specalization is  " + specalization + " avalability is " + avalability
-				+ "]";
+		return "Docter[id is " + id + " name is " + name + " specalization is  " + specalization + " avalability is "
+				+ avalability + "]";
 
 	}
 

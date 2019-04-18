@@ -11,6 +11,7 @@ public class Patient {
 	private int id;
 	private String name;
 	private int age;
+	private int mobilenum;
 
 	public int getId() {
 		return id;
@@ -34,6 +35,12 @@ public class Patient {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+	public int getMobilenum() {
+		return mobilenum;
+	}
+	public void setMobilenum(int mobilenum) {
+		this.mobilenum = mobilenum;
 	}
 
 }

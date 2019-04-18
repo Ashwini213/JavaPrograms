@@ -14,10 +14,9 @@ import com.bridgelabz.cliniquemanagement.data.DoctorData;
 public class Docterdataimpl implements DoctorData
 
 {
-
 	@Override
 	public List<DoctorData> getDocter() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 }

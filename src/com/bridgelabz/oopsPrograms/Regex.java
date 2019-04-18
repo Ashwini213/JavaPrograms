@@ -18,11 +18,12 @@ import com.bridgelabz.oopsUtility.OopsUtility;
  *
  */
 public class Regex {
+	
 	public static void main(String[] args) throws FileNotFoundException {
-		File str = new File("C:\\Users\\all\\Desktop\\ash\\Regex.txt");
-		FileReader f = new FileReader(str);
+		File file = new File("C:\\Users\\all\\Desktop\\ash\\Regex.txt");
+		FileReader reader = new FileReader(file);
 		@SuppressWarnings("resource")
-		BufferedReader read = new BufferedReader(f);
+		BufferedReader read = new BufferedReader(reader);
 		String line = "";
 		String word = "";
 		try {
