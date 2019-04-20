@@ -12,4 +12,10 @@ import java.util.List;
  */
 public interface DoctorData {
  public List<DoctorData> getDocter();
+ public void addDoctor();
+ public void searchDoctor();
+ public void searchByName();
+ public void searchById();
+ public void searchBySpecialization();
+ public void searchByAvailability();
 }

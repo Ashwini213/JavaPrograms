@@ -1,27 +1,58 @@
-[
-	{
-		"name": "pen",
-		"share": 2,
-		"price": 22.0
+{
+	"head": {
+		"value": {
+			"comapanyName": "pencil",
+			"noOfShare": 3
+		},
+		"nextRef": {
+			"value": {
+				"comapanyName": "eraser",
+				"noOfShare": 4
+			},
+			"nextRef": {
+				"value": {
+					"comapanyName": "book",
+					"noOfShare": 4
+				},
+				"nextRef": {
+					"value": {
+						"comapanyName": "notebook",
+						"noOfShare": 6
+					},
+					"nextRef": {
+						"value": {
+							"comapanyName": "inkpen",
+							"noOfShare": 3
+						},
+						"nextRef": {
+							"value": {
+								"comapanyName": "newspaper",
+								"noOfShare": 6
+							},
+							"nextRef": {
+								"value": {
+									"comapanyName": "ass",
+									"noOfShare": 3
+								},
+								"size": 0
+							},
+							"size": 0
+						},
+						"size": 0
+					},
+					"size": 0
+				},
+				"size": 0
+			},
+			"size": 0
+		},
+		"size": 0
 	},
-	{
-		"name": "pencil",
-		"share": 3,
-		"price": 14.0
-	},
-	{
-		"name": "eraser",
-		"share": 4,
-		"price": 54.0
-	},
-	{
-		"name": "book",
-		"share": 4,
-		"price": 33.0
-	},
-	{
-		"name": "notebook",
-		"share": 6,
-		"price": 25.0
+	"tail": {
+		"value": {
+			"comapanyName": "ass",
+			"noOfShare": 3
+		},
+		"size": 0
 	}
-]
+}

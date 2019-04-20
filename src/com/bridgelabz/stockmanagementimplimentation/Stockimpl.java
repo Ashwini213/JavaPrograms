@@ -106,5 +106,13 @@ public class Stockimpl implements Stockdata {
 				.println(" Total price of " + stock.getName() + " is " + (stock.getPrice() * stock.getShare())));
 
 	}
+	
+	public void calculateTotalStock() {
+		double sum=0;
+		for(Stock stock: stocklist) {
+			sum=sum+(stock.getPrice()*stock.getShare());
+		}
+		System.out.println("Total value is " + sum);
+	}
 
 }

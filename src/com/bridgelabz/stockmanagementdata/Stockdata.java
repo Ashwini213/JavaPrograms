@@ -15,4 +15,5 @@ public interface Stockdata {
 	public void add(String name, long share, double price);
 
 	public void calculateStock();
+	public void calculateTotalStock();
 }

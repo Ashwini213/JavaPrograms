@@ -30,6 +30,7 @@ public class Stockmanagement {
 			// inv.setPrice(price);
 			stockImp.add(name, share, price);
 			stockImp.calculateStock();
+			stockImp.calculateTotalStock();
 			stockImp.writeFile();
 			sc.close();
 		}

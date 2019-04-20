@@ -3,14 +3,13 @@
  */
 package com.bridgelabz.cliniquemanagement.main;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.bridgelabz.cliniquemanagement.docterdataimpl.ManagementDetail;
+import com.bridgelabz.cliniquemanagement.model.Docter;
+import com.bridgelabz.cliniquemanagement.model.Patient;
+import com.bridgelabz.oopsUtility.OopsUtility;
 
 /**
  * @author all
@@ -18,31 +17,43 @@ import org.json.simple.parser.ParseException;
  */
 public class CliniqueManagementMain {
 	public static final String File_Name = "docter.json";
+	String originfile = "";
+	List<Docter> doctorlist1 = new ArrayList<Docter>();
+	List<Patient> patientlist1 = new ArrayList<Patient>();
+	Patient patient = new Patient();
+	Docter doctor = new Docter();
+	int ch = 0;
 
-	/**
-	 * @param args
-	 * @throws ParseException
-	 * @throws IOException
-	 */
-	@SuppressWarnings("unchecked")
-	public static void main(String[] args) throws IOException, ParseException {
-
-		JSONParser json = new JSONParser();
-		FileReader reader = new FileReader(
-				"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\cliniquemanagement\\model\\docter.json");
-
-		Object obj = json.parse(reader);
-		JSONObject listDocter = (JSONObject) obj;
-		// System.out.println(listDocter);
-		// String docter = (String) listDocter.get("docter");
-		// System.out.println(docter);
-		JSONArray array = (JSONArray) listDocter.get("Docter");
-		// for(int i=0;i<((CharSequence) Docter).length();i++) {
-		// System.out.println(Docter);
-		Iterator<Object> iterator1 = array.iterator();
-		while (iterator1.hasNext()) {
-			System.out.println(iterator1.next());
-
-		}
-	}
+	public static void main(String[] args) {
+		System.out.println("-----Welcome to Clinical Management------");
+		System.out.println("Do you want Details of ");
+		do {
+		System.out.println("1: Add Doctor");
+	    System.out.println("2: Add Patient");
+	    System.out.println("3: Take Appointment");
+	    System.out.println("4: Search Doctor");
+	    System.out.println("5: Search patient");
+	    System.out.println("6: Exit from the clinic");
+	    int choice=OopsUtility.getInt();
+	    switch (choice)
+	    {
+	    
+	    
+	    case 1:
+	    	ManagementDetail.addDoctor();
+         	break;
+	    
+	    case 2:
+	    
+	    	 ManagementDetail.addPatient();
+	    	break;
+	    
+	    case 3:
+	    
+	    	
+	    	ManagementDetail.takeAppointment();	
+	    	break;
+	
+	    }
 }
+	}

@@ -46,7 +46,7 @@ public class InventoryImpl implements InventoryInterface {
 			}
 
 			for (Object obj : jsonArray) {
-				Inventory inventory = new Inventory();
+				Inventory inventory = new Inventory(jobject);
 
 				jobject = (JSONObject) obj;
 				String name = (String) jobject.get("name");

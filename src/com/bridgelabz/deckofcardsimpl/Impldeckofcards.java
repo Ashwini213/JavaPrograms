@@ -22,9 +22,9 @@ public class Impldeckofcards implements Interfacedeck {
 		for (int i = 0; i < value.length; i++) {
 			for (int j = 0; j < Suits.length; j++) {
 				deck[Suits.length * i + j] = value[i] + " " + Suits[j];
-				//System.out.println(deck[Suits.length * i + j]);
+				// System.out.println(deck[Suits.length * i + j]);
 			}
-			
+
 		}
 	}
 
@@ -48,13 +48,13 @@ public class Impldeckofcards implements Interfacedeck {
 
 		}
 		System.out.println();
+		int k = 0;
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 4; j++) {
-				System.out.print(deck[i + j * 4] + " (Card " + (i + j * 4) + ")" + "\t");
-
+				System.out.print(deck[k] + " (Card " + (k) + ")" + "\t");
+				k++;
 			}
 			System.out.println();
 		}
 	}
-
 }

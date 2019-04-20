@@ -43,4 +43,9 @@ public class Patient {
 		this.mobilenum = mobilenum;
 	}
 
+	@Override
+	public String toString() {
+		return "Patient [id=" + id + ", name=" + name + ", age=" + age + ", mobilenum=" + mobilenum + "]";
+	}
+
 }

@@ -1,10 +1,11 @@
 /**
  * 
  */
-package com.bridgelabz.cliniquemanagement.model;
+package com.bridgelabz.cliniquemanagement.docterdataimpl;
 
 import java.io.File;
 
+import com.bridgelabz.cliniquemanagement.data.DoctorData;
 import com.bridgelabz.oopsUtility.OopsUtility;
 
 /**
@@ -12,10 +13,11 @@ import com.bridgelabz.oopsUtility.OopsUtility;
  *
  */
 public class DocterManagement {
-	static String originfile = "C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\cliniquemanagement\\model\\docter.json";
+	String originfile = "C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\cliniquemanagement\\model\\docter.json";
+	DoctorData object = new Docterdataimpl();
 
 	@SuppressWarnings("unused")
-	public static void doctorDetails() {
+	public void doctorDetails() {
 		int ch = 0;
 		do {
 			System.out.println(" 1:Do you want to add Doctor");
@@ -26,19 +28,19 @@ public class DocterManagement {
 			int option = OopsUtility.getInt();
 			switch (option) {
 			case 1: {
-				DocterSearch.addDoctor();
+				object.addDoctor();
 				File file = new File(originfile);
 				break;
 			}
 			case 2: {
-				DocterSearch.searchDoctor();
+				object.searchDoctor();
 				break;
 			}
 
 			default:
 				System.out.println("PLs eneter the proper choice");
 				break;
-			}    
+			}
 			ch++;
 		} while (ch > 50);
 

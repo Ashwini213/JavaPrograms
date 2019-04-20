@@ -1,22 +1,24 @@
 /**
  * 
  */
-package com.bridgelabz.cliniquemanagement.model;
+package com.bridgelabz.cliniquemanagement.docterdataimpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bridgelabz.cliniquemanagement.data.PatientData;
+import com.bridgelabz.cliniquemanagement.model.Patient;
 import com.bridgelabz.oopsUtility.OopsUtility;
 
 /**
  * @author all
  *
  */
-public class PatientSearch {
-	static List<Patient> patientlist = new ArrayList<Patient>();
-	static Patient patient = null;
+public class PatientDataimpl implements PatientData {
+	List<Patient> patientlist = new ArrayList<Patient>();
+	Patient patient = null;
 
-	public static void patientMang() {
+	public void patientMang() {
 		System.out.println("1:Do you want to add Patient");
 		System.out.println("2: Do you want to search a Patient");
 		int option = OopsUtility.getInt();
@@ -37,7 +39,7 @@ public class PatientSearch {
 
 	}
 
-	public static void addPatient() {
+	public void addPatient() {
 		patient = new Patient();
 		System.out.println("Enter the Patient id");
 		int pid = OopsUtility.getInt();
@@ -54,7 +56,7 @@ public class PatientSearch {
 		patientlist.add(patient);
 	}
 
-	public static void searchpatient() {
+	public void searchpatient() {
 		System.out.println("1: Search Patient by Patient ID");
 		System.out.println("2: Search Patient by Phone no");
 		int choice = OopsUtility.getInt();
@@ -74,7 +76,7 @@ public class PatientSearch {
 		}
 	}
 
-	public static void searchByID() {
+	public void searchByID() {
 
 		System.out.println("Enter the patient's id to be searched");
 		int patid = OopsUtility.getInt();
@@ -89,7 +91,7 @@ public class PatientSearch {
 		}
 	}
 
-	public static void searchByPhoneno() {
+	public void searchByPhoneno() {
 		System.out.println("enter the patient's phone no to be searched");
 		int ppn = OopsUtility.getInt();
 		try {
@@ -103,7 +105,7 @@ public class PatientSearch {
 		}
 	}
 
-	public static void display() {
+	public void display() {
 		if (!patientlist.isEmpty()) {
 			for (Patient pd : patientlist) {
 				System.out.println("PatientID :" + pd.getId());
