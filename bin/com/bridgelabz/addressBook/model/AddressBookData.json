@@ -1,0 +1,27 @@
+[
+	{
+		"firstName": "ashwini",
+		"lastName": "sunagar",
+		"city": "glb",
+		"phoneNumber": 786544091,
+		"zipCode": 585102,
+		"state": "karnataka"
+	},
+	{
+		"firstName": "pooja",
+		"lastName": "chouadari",
+		"city": "glb",
+		"phoneNumber": 786544091,
+		"zipCode": 585103,
+		"state": "karnataka"
+	},
+	{
+		"firstName": "tanya",
+		"lastName": "patil",
+		"city": "glb",
+		"phoneNumber": 9102764,
+		"zipCode": 35437,
+		"state": "karnataka",
+		"address": "temple"
+	}
+]

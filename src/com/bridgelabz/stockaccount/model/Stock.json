@@ -1,1 +1,10 @@
-{"ShareHolders":[{"stockCompany":"Tata","noOfShares":21.0,"sharePrice":120.0,"currentDateTime":"2018-10- 06T12:54:44.797"}]}
+{
+	"ShareHolders": [
+		{
+			"stockCompany": "Tata",
+			"noOfShares": 21.0,
+			"sharePrice": 120.0,
+			"currentDateTime": "2018-10- 06T12:54:44.797"
+		}
+	]
+}

@@ -5,8 +5,8 @@ package com.bridgelabz.inventory.main;
 
 import java.util.Scanner;
 
-import com.bridgelabz.inventory.data.InventoryInterface;
-import com.bridgelabz.inventory.implimentation.InventoryImpl;
+import com.bridgelabz.inventory.implementation.InventoryImplementation;
+import com.bridgelabz.inventory.manager.InventoryInterface;
 
 /**
  * @author all
@@ -22,7 +22,7 @@ public class InventoryMain {
 
 	public static void main(String[] args) {
 
-		InventoryInterface inventaryImp = new InventoryImpl();
+		InventoryInterface inventaryImp = new InventoryImplementation();
 		{
 			Scanner sc = new Scanner(System.in);
 			inventaryImp.fileRead();
