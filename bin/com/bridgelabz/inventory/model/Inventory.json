@@ -1,12 +1,1 @@
-[
-	{
-		"name": "rice",
-		"weight": 20.0,
-		"price": 60.0
-},
-	{
-		"name": "wheat",
-		"weight": 80.0,
-		"price": 40.0
-}
-]
+[{"name":"rice2","weight":20.0,"price":19.3},{"name":"wheat","weight":13.0,"price":56.0},{"name":"asd","weight":0.25,"price":12.0},{"name":"qwe","weight":12.0,"price":32.0}]

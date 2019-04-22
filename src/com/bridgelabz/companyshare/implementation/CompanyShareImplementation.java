@@ -39,7 +39,7 @@ public class CompanyShareImplementation implements CompanyShareInterface {
 		FileReader fr;
 		try {
 			fr = new FileReader(
-					"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\stockaccount\\model\\Stock.json");
+					"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\companyshare\\model\\CompanyShare.json");
 			jsonArray = (JSONArray) parser.parse(fr);
 		} catch (IOException e) {
 
@@ -52,9 +52,12 @@ public class CompanyShareImplementation implements CompanyShareInterface {
 			jobject = (JSONObject) obj;
 			String name = (String) jobject.get("name");
 			Long noOfShare = (Long) jobject.get("share");
+			double price = (double) jobject.get("price");
 
 			comShare.setComapanyName(name);
 			comShare.setNoOfShare(noOfShare);
+			comShare.setPrice(price);
+			
 			linkedList.add(comShare);
 			 list.add(comShare);
 		}
@@ -71,8 +74,11 @@ public class CompanyShareImplementation implements CompanyShareInterface {
 		String name = OopsUtility.getstring();
 		System.out.println("enter the number of share");
 		Long noOfShare = OopsUtility.getLong();
+		System.out.println("enter the price");
+		double price = OopsUtility.getDouble();
 		String name1 = share.setComapanyName(name);
 		Long noshare = share.setNoOfShare(noOfShare);
+		double price1 = share.setPrice(price);
 		linkedList.add(share);
 		System.out.println("linked  list after adding:");
 		linkedList.printList();
@@ -106,7 +112,7 @@ public class CompanyShareImplementation implements CompanyShareInterface {
 
 		try {
 			FileWriter file = new FileWriter(
-					"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\stockaccount\\model\\Stock.json");
+					"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\companyshare\\model\\CompanyShare.json");
 			file.write(g);
 			file.flush();
 			System.out.println("written into file");

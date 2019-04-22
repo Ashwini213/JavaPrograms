@@ -1,0 +1,24 @@
+[
+	{
+		"name": "pen",
+		"noShare": 5,
+		"price": 200.0
+	},
+	{
+		"name": "book",
+		"noShare": 10,
+		"price": 2.0
+	},
+	{
+		"name": "pencile",
+		"noShare": 25,
+		"price": 520.0
+	},
+	{
+		"name": "Book",
+		"noShare": 58,
+		"price": 25.0
+	}
+
+]
+

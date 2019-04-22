@@ -3,8 +3,6 @@
  */
 package com.bridgelabz.inventory.implementation;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,6 +16,7 @@ import org.json.simple.parser.ParseException;
 
 import com.bridgelabz.inventory.manager.InventoryInterface;
 import com.bridgelabz.inventory.model.Inventory;
+import com.bridgelabz.oopsUtility.FileOperation;
 import com.google.gson.Gson;
 
 public class InventoryImplementation implements InventoryInterface {
@@ -26,40 +25,37 @@ public class InventoryImplementation implements InventoryInterface {
 
 	JSONObject jobject = new JSONObject();
 
-	public void fileRead() {
+	public InventoryImplementation() {
+		this.fileRead();
+	}
+
+	private void fileRead() {
 		JSONParser parser = new JSONParser();
 		{
 
 			try {
-				jsonArray = (JSONArray) parser.parse(new FileReader(
-						"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\inventory\\model\\Inventory.json"));
-				System.out.println("====>>" + jsonArray);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
+				String path = "C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\inventory\\model\\Inventory.json";
+				jsonArray = (JSONArray) parser.parse(FileOperation.readFile(path));
+				System.out.println(jsonArray);
+				for (Object obj : jsonArray) {
+					Inventory inventory = new Inventory();
+
+					jobject = (JSONObject) obj;
+					String name = (String) jobject.get("name");
+					double price = ((Double) jobject.get("price")).doubleValue();
+					double weight = ((Double) jobject.get("weight")).doubleValue();
+					inventory.setWeight(weight); // setWeight(weight);
+					inventory.setName(name);
+
+					inventory.setPrice(price);
+
+					inventories.add(inventory);
+
+					System.out.println(inventory.toString());
+				}
+			} catch (IOException | ParseException e) {
+
 				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			for (Object obj : jsonArray) {
-				Inventory inventory = new Inventory(jobject);
-
-				jobject = (JSONObject) obj;
-				String name = (String) jobject.get("name");
-				double price = ((Double) jobject.get("price")).doubleValue();
-				double weight = ((Double) jobject.get("weight")).doubleValue();
-				inventory.setWeight(weight); // setWeight(weight);
-				inventory.setName(name);
-
-				inventory.setPrice(price);
-				inventories.add(inventory);
-
-				System.out.println(inventory.toString());
-
 			}
 		}
 	}
@@ -67,14 +63,12 @@ public class InventoryImplementation implements InventoryInterface {
 	public void calculateInventory() {
 		inventories.forEach(inventory -> System.out.println(
 				"Total price of " + inventory.getName() + "is" + (inventory.getPrice() * inventory.getWeight())));
-
+		writeFile();
 	}
 
-	public void writeFile() {
+	private void writeFile() {
 		Gson gson = new Gson();
 		String json = gson.toJson(inventories);
-		System.out.println("xyz" + json);
-		System.out.println("===>" + inventories);
 
 		try (FileWriter file = new FileWriter(
 				"C:\\Users\\all\\eclipse-workspace\\functionalPrograms\\src\\com\\bridgelabz\\inventory\\model\\Inventory.json")) {
@@ -94,13 +88,12 @@ public class InventoryImplementation implements InventoryInterface {
 		inventory.setWeight(weight);
 		inventories.add(inventory);
 		inventories.forEach(inventory1 -> System.out.println(inventory1.toString()));
+		writeFile();
 
 	}
 
 	@Override
 	public void remove(String name) {
-		Inventory inventory = new Inventory();
-		// fileRead();
 
 		System.out.println("enter the name you wan to delete");
 		Scanner sc = new Scanner(System.in);

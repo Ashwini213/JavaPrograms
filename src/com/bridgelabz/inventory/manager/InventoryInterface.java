@@ -9,10 +9,9 @@ package com.bridgelabz.inventory.manager;
  */
 public interface InventoryInterface {
 
-	public void fileRead();
+//	public void fileRead();
 
-
-	public void writeFile();
+	// public void writeFile();
 
 	public void add(String name, double weight, double price);
 

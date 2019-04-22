@@ -12,6 +12,7 @@ import java.util.List;
 public class CompanyShare {
 	private String comapanyName;
 	private Long noOfShare;
+	private double price;
 	private List<CompanyShare> list;
 
 	public String getComapanyName() {
@@ -38,9 +39,20 @@ public class CompanyShare {
 		this.list = list;
 	}
 
-	@Override
-	public String toString() {
-		return "CompanyShare [comapanyName=" + comapanyName + ", noOfShare=" + noOfShare + ", list=" + list + "]";
+	
+
+	public double getPrice() {
+		return price;
 	}
 
+	public double setPrice(double price) {
+		return this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "CompanyShare [comapanyName=" + comapanyName + ", noOfShare=" + noOfShare + ", price=" + price
+				+ ", list=" + list + "]";
+	}
+	
 }
