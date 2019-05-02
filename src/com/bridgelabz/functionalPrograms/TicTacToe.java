@@ -1,14 +1,14 @@
 package com.bridgelabz.functionalPrograms;
 
 import java.util.Arrays;
-import java.util.Scanner;
+
+import com.bridgelabz.functionalProgUtil.FunctionalProgUtil;
 
 public class TicTacToe {
 	static String[] board;
 	static String turn;
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		board = new String[9];
 		turn = "X";
 		String winner = null;
@@ -17,7 +17,7 @@ public class TicTacToe {
 		System.out.println(" First player is X ");
 		while (winner == null) {
 			int inputNum;
-			inputNum = scanner.nextInt();
+			inputNum = FunctionalProgUtil.getInt();
 			if (!(inputNum > 0 && inputNum <= 9)) {
 				System.out.println("Invalid input");
 			}
@@ -36,7 +36,6 @@ public class TicTacToe {
 			}
 
 		}
-		scanner.close();
 		System.out.println(" winner is:" + winner);
 	}
 

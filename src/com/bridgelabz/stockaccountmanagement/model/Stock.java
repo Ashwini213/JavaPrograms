@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bridgelabz.stockmanagementmodel;
+package com.bridgelabz.stockaccountmanagement.model;
 
 /**
  * @author all
